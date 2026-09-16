@@ -52,6 +52,19 @@
     });
   }
 
+  /* ---------- 首页纸色导航：滚过封面后淡入站点 logo ---------- */
+  var paperHeader = document.querySelector(".site-header.on-paper");
+  if (paperHeader) {
+    var headScroll = function () {
+      var root = document.documentElement || document.body;
+      var y = window.pageYOffset !== undefined ? window.pageYOffset : (root.scrollTop || 0);
+      if (y > 120) { paperHeader.classList.add("scrolled"); }
+      else { paperHeader.classList.remove("scrolled"); }
+    };
+    window.addEventListener("scroll", headScroll, { passive: true });
+    headScroll();
+  }
+
   /* ---------- 滚动渐显 ---------- */
   var revealEls = document.querySelectorAll("[data-reveal]");
   if (revealEls.length && "IntersectionObserver" in window) {

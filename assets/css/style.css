@@ -71,6 +71,21 @@ a { color: inherit; text-decoration: none; }
   padding: 6px 12px; cursor: pointer;
 }
 
+/* ---- 首页：导航与封面同色（封面纸底实测 #f2efe7，用同一个色才接得无缝） ---- */
+.site-header.on-paper {
+  background: #f2efe7; color: var(--ink); border-bottom: 0;
+}
+.site-header.on-paper.scrolled { border-bottom: 1px solid rgba(32,29,24,.08); }
+/* 顶部不显示站点 logo——封面左上角已有「Design by Xiang Jianzhuo」，避免两个署名叠在一起；
+   滚过封面后（.scrolled）再淡入 */
+.site-header.on-paper .logo { opacity: 0; pointer-events: none; transition: opacity .3s; }
+.site-header.on-paper.scrolled .logo { opacity: 1; pointer-events: auto; }
+.site-header.on-paper .nav a { color: #5a5349; }
+.site-header.on-paper .nav a:hover { background: var(--cinnabar); color: #fff; }
+.site-header.on-paper .nav .sep { color: rgba(90,83,73,.3); }
+.site-header.on-paper .menu-btn { color: var(--ink); border-color: rgba(32,29,24,.25); }
+.site-header.on-paper .nav.open { background: #f2efe7; }
+
 /* ============================================================
    Hero（首页）—— 2026-09-16
    直接使用用户设计的封面图（1672×941），不再用 HTML 重排版式
