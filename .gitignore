@@ -1,9 +1,5 @@
-# 临时渲染产物（headless 截图 / 预览注入文件）
-_preview-*.png
-_full*.png
-_pv*.html
-_pv*.png
-_m.html
+# 本地测试产物（headless 截图 / 预览注入 / 探针页等）——统一用下划线开头，一律不进仓库
+_*
 
 # 系统文件
 Thumbs.db

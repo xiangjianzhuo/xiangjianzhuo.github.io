@@ -439,6 +439,7 @@ footer a:hover { color: var(--gold); }
   .nav { display: none; }
   .nav.open { display: flex; flex-direction: column; align-items: stretch; position: absolute; left: 0; right: 0; top: 100%; background: var(--ink); padding: 8px 5vw; z-index: 51; }
   .nav.open a { display: block; text-align: left; padding: 11px 14px; border-radius: 8px; font-size: 15px; }
+  .nav.open .sep { display: none; }   /* 竖排时隐藏桌面端的「/」分隔符，否则会变成一行行孤立斜杠 */
   .menu-btn { display: inline-block; }
 
   .hero { padding: 7vh 0 8vh; }
