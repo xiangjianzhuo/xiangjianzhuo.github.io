@@ -72,54 +72,11 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   Hero（首页）—— 2026-09-16 改版
-   按用户设计的封面重做：米色纸底 + 朱砂金墨迹 + 超细/超粗无衬线对撞
+   Hero（首页）—— 2026-09-16
+   直接使用用户设计的封面图（1672×941），不再用 HTML 重排版式
    ============================================================ */
-.hero {
-  position: relative; overflow: hidden;
-  background: var(--paper); color: #14110d;
-  padding: 10vh 0 8vh;
-}
-.hero-ink {
-  position: absolute; top: 0; right: 0; z-index: 0;
-  width: min(54%, 780px); height: auto;
-  pointer-events: none; user-select: none;
-}
-.hero .container { position: relative; z-index: 1; }
-
-.htype { line-height: .9; letter-spacing: -.02em; }
-.htype > span { display: block; }
-/* 注意：上面这条 (0,1,1) 会压过 .t-row 的 flex (0,1,0)，所以这里必须写成 .htype .t-row 提高优先级 */
-.htype .t-row { display: flex; }
-.t-thin, .t-bold {
-  font-family: "Segoe UI Variable Display", "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", sans-serif;
-}
-.t-thin { font-weight: 200; font-size: clamp(38px, 7.4vw, 100px); }
-.t-row { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 40px); flex-wrap: wrap; }
-.t-bold { font-weight: 900; font-size: clamp(50px, 10.2vw, 142px); letter-spacing: -.035em; }
-.t-kw {
-  font-size: clamp(9px, 1vw, 12px); letter-spacing: .16em; font-weight: 600;
-  color: #6f665c; line-height: 1.75;
-  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-}
-.t-kw i { display: block; width: 46px; height: 3px; background: var(--cinnabar); margin-bottom: 12px; }
-
-.hero-below {
-  margin-top: clamp(26px, 4.5vw, 58px);
-  display: flex; justify-content: space-between; align-items: flex-end;
-  gap: 26px; flex-wrap: wrap;
-}
-.hero-name { font-size: 15px; letter-spacing: .16em; font-weight: 700; color: var(--ink); }
-.hero-name span { margin-left: 10px; font-weight: 600; letter-spacing: .12em; color: #8b8177; }
-.hero .intro {
-  margin-top: 14px; max-width: 660px; font-size: 15.5px; color: #4b453d; line-height: 2;
-}
-.hero .cta { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
-.hero-years { font-size: 13px; letter-spacing: .2em; color: #8b8177; white-space: nowrap; }
-
-/* 浅底上的描边按钮（深色版的 .btn.line 在浅底上会看不见） */
-.hero .btn.line { color: var(--ink); border-color: rgba(32,29,24,.3); }
-.hero .btn.line:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.hero { background: var(--paper); }
+.hero-cover { display: block; width: 100%; height: auto; }
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 26px; border-radius: 999px; font-size: 14.5px; letter-spacing: 2px;
@@ -451,18 +408,7 @@ footer a:hover { color: var(--gold); }
   .nav.open .sep { display: none; }   /* 竖排时隐藏桌面端的「/」分隔符，否则会变成一行行孤立斜杠 */
   .menu-btn { display: inline-block; }
 
-  .hero { padding: 5vh 0 6vh; }
-  .hero-ink { width: 72%; opacity: .92; }
-  .t-thin { font-size: 34px; }
-  .t-bold { font-size: 46px; }
-  .t-row { gap: 12px; }
-  .t-kw { font-size: 9px; letter-spacing: .11em; max-width: none; }
-  .t-kw i { width: 30px; height: 2px; margin-bottom: 8px; }
-  .hero-below { margin-top: 22px; gap: 18px; }
-  .hero-name { font-size: 14px; }
-  .hero .intro { font-size: 15px; margin-top: 12px; line-height: 1.95; }
-  .hero .cta { margin-top: 18px; }
-  .hero-years { display: none; }
+  .hero { overflow: hidden; }
 
   .featured { grid-template-columns: 1fr; gap: 34px; }
   .fc { grid-template-columns: 1fr; gap: 14px; }
