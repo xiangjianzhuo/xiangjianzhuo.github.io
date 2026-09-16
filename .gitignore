@@ -1,0 +1,11 @@
+# 临时渲染产物（headless 截图 / 预览注入文件）
+_preview-*.png
+_full*.png
+_pv*.html
+_pv*.png
+_m.html
+
+# 系统文件
+Thumbs.db
+desktop.ini
+.DS_Store

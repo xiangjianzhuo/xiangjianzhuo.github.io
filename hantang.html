@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>云鬓花颜 · AI 汉唐妆造生成 — 项建卓作品集</title>
+<meta name="description" content="云鬓花颜 — AI 汉唐妆造个性化生成小程序：照片 → 人脸分析 → 考据知识库 → AI 生成 → 沉浸式试妆。毕业设计，依托导师课题。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239e2b25'/%3E%3Ctext x='16' y='23' font-size='19' text-anchor='middle' fill='%23f2ead9'%3E汉%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="hantang">
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">项建卓<small>XIANG JIANZHUO</small></a>
+    <nav class="nav">
+      <a href="index.html" data-slug="home">首页</a>
+      <span class="sep">/</span>
+      <a href="hantang.html" data-slug="hantang">云鬓花颜</a>
+      <span class="sep">/</span>
+      <a href="leyou.html" data-slug="leyou">乐游</a>
+      <span class="sep">/</span>
+      <a href="shanhaiji.html" data-slug="shanhaiji">山海纪</a>
+      <span class="sep">/</span>
+      <a href="tujunjun.html" data-slug="tujunjun">兔军军</a>
+      <span class="sep">/</span>
+      <a href="index.html#contact">联系</a>
+    </nav>
+    <button class="menu-btn" aria-label="菜单">菜单 ☰</button>
+  </div>
+</header>
+
+<!-- ===================== 封面 ===================== -->
+<div class="dcover">
+  <div class="dimg"><img src="assets/hantang-ui1.jpg" alt="云鬓花颜 封面大图"></div>
+  <div class="dhead">
+    <div class="kick">PROJECT 01</div>
+    <h1>云鬓花颜</h1>
+    <div class="en3">AI Han-Tang Makeup Generation &amp; Immersive Experience</div>
+    <div class="dmeta">
+      <span>毕业设计 · 依托导师课题</span>
+      <span>2025 — 至今</span>
+      <span>微信小程序 · 云开发</span>
+    </div>
+    <p class="drole">
+      项目角色：研究问题定义 · 考据知识库构建 · 生成系统设计 · 产品与全栈开发 · 五维评价体系
+      —— 从「照片 → 人脸分析 → AI 生成汉唐妆造 → 沉浸式试妆」全链路，到支撑毕业论文的研究闭环。
+    </p>
+  </div>
+</div>
+
+<!-- ===================== 背景 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">01</span>
+      <h3>背景</h3>
+      <span class="k-en">Background</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        汉唐妆造存在于墓室壁画、文物与文献之中，公众可以直接看，却很难真正「体验」。
+        依托导师课题《基于 AIGC 人工智能生成艺术的文物数字化复刻与创新转化应用研究》
+        （以懿德太子墓壁画为样本，本人负责妆造与色彩分析方向），衍生出面向大众的「云鬓花颜」体验研究——
+        用 AI 生成，让汉唐妆造不只是被看见，而是被体验、被考据、被理解。
+      </p>
+      <p>
+        项目的核心主张：AI 生成的「美」应该有据可查。每一件妆造输出，都对应可追溯的壁画 / 文献 / 考古来源，
+        生成结果附纹样考据注释——这使它区别于一般「AI 换脸」产品，成为一次数字媒体艺术与文化遗产研究的交叉实践。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 调研 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">02</span>
+      <h3>调研</h3>
+      <span class="k-en">Research</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        自建汉唐妆造考据知识库（100+ 条目）。条目来源覆盖墓室壁画、文献考据、考古报告与文物图像，
+        按妆造要素组织为五大分支：
+      </p>
+      <ul>
+        <li><b>发型</b>：双螺髻、惊鸿髻、堕马髻、高髻、倭堕髻……</li>
+        <li><b>眉形</b>：却月眉、柳叶眉、远山眉、八字眉、涵烟眉……</li>
+        <li><b>花钿 / 面饰</b>：梅花钿、花钿式、斜红、妆靥……</li>
+        <li><b>色彩</b>：石青、朱砂、赭石、黛黑、胭脂、铅白……</li>
+        <li><b>纹样</b>：忍冬纹、宝相花、联珠纹、团窠纹……</li>
+      </ul>
+      <p style="margin-top:10px">
+        知识库是生成的前提：模型不是凭空想象妆造，而是从考据条目出发完成风格构建——
+        这也让「六类考据风格 Prompt 体系」的每一类都能落在具体史料上。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 设计过程 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">03</span>
+      <h3>设计过程</h3>
+      <span class="k-en">Design Process</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>设计上需要解决的关键问题：<b>AI 风格迁移容易破坏用户身份特征</b>。因此采用两阶段生成思路——</p>
+      <ul>
+        <li><b>阶段一 · AI 形象</b>：先由用户照片生成稳定的 AI 形象，分离「本人样貌」；</li>
+        <li><b>阶段二 · 妆造生成</b>：再在形象之上叠加妆造风格，避免风格迁移破坏身份特征。</li>
+      </ul>
+      <p style="margin-top:10px">
+        Prompt 结构逐项可解构：身份描述 + 妆造要素（发型 / 眉形 / 花钿 / 色彩 / 纹样）+ 风格限定 + 考据来源注释，
+        六类考据风格（敦煌、花钿中、龙妆等）共享同一套可复现的生成系统。
+      </p>
+    </div>
+    <div class="gallery" style="margin-top:40px" data-reveal>
+      <figure class="g-item"><img src="assets/hantang-dunhuang.jpg" alt="敦煌风格生成结果" loading="lazy"></figure>
+      <figure class="g-item"><img src="assets/hantang-huanizhong.jpg" alt="花钿中风格生成结果" loading="lazy"></figure>
+      <figure class="g-item"><img src="assets/hantang-longzhang.jpg" alt="龙妆风格生成结果" loading="lazy"></figure>
+    </div>
+    <p style="font-size:12px;color:#8a7a5f;letter-spacing:1px;max-width:860px;margin:16px auto 0;text-align:center">六类考据风格中的三类生成结果 · 各风格原始图与妆造生成图对照</p>
+  </div>
+</section>
+
+<!-- ===================== 技术流程 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">04</span>
+      <h3>技术流程</h3>
+      <span class="k-en">Technical Flow</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>微信小程序 + 云开发 + 腾讯混元大模型图生图 + 腾讯云 IAI 人脸识别，构建完整生成管线：</p>
+    </div>
+    <div class="flow" style="max-width:1200px;margin:26px auto 0" data-reveal>
+      <div class="fstep"><div class="fi">🖼️</div><div class="ft">照片上传</div><div class="fs">用户照片</div></div>
+      <div class="farr">→</div>
+      <div class="fstep"><div class="fi">🧑🔬</div><div class="ft">人脸分析</div><div class="fs">腾讯云 IAI</div></div>
+      <div class="farr">→</div>
+      <div class="fstep"><div class="fi">📋</div><div class="ft">特征提取</div><div class="fs">身份 / 面部特征</div></div>
+      <div class="farr">→</div>
+      <div class="fstep hl"><div class="fi">📚</div><div class="ft">知识 → Prompt</div><div class="fs">考据知识库构建</div></div>
+      <div class="farr">→</div>
+      <div class="fstep"><div class="fi">✨</div><div class="ft">AI 生成</div><div class="fs">腾讯混元 I2I</div></div>
+      <div class="farr">→</div>
+      <div class="fstep"><div class="fi">🎎</div><div class="ft">妆造结果</div><div class="fs">六类风格</div></div>
+      <div class="farr">→</div>
+      <div class="fstep"><div class="fi">📜</div><div class="ft">考据注释</div><div class="fs">纹样来源反馈</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 最终成果 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">05</span>
+      <h3>最终成果</h3>
+      <span class="k-en">Final Results</span>
+    </div>
+    <div class="gallery" data-reveal>
+      <figure class="g-item">
+        <img src="assets/hantang-ui1.jpg" alt="小程序真机界面一" loading="lazy">
+        <figcaption class="g-cap">照片上传 · 妆造选择</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/hantang-ui2.jpg" alt="小程序真机界面二" loading="lazy">
+        <figcaption class="g-cap">AI 生成 · 进度反馈</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/hantang-ui3.jpg" alt="小程序真机界面三" loading="lazy">
+        <figcaption class="g-cap">结果分享 · 考据注释</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/hantang-shinU.jpg" alt="画中仕女效果" loading="lazy">
+        <figcaption class="g-cap">画中仕女 · 沉浸式效果</figcaption>
+      </figure>
+    </div>
+    <p style="font-size:16px;color:var(--ink-2);line-height:2;max-width:860px;margin:30px auto 0" data-reveal>
+      体验版已上线。生成链路「照片 → 人脸分析 → AI 生成汉唐妆造 → 沉浸式试妆」全流程可用，
+      生成结果附带纹样考据注释，五维评分反馈（考据准确度 / 生成质量 / 历史还原度 / 体验满意度 / 身份保持度）
+      持续采集数据并支撑毕业论文。
+    </p>
+  </div>
+</section>
+
+<!-- ===================== 视频演示 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">06</span>
+      <h3>视频 · 体验演示</h3>
+      <span class="k-en">Video &amp; Demo</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>「云鬓花颜」暂无公开视频，体验方式为微信小程序体验版——扫码即可直接试用完整生成流程：</p>
+    </div>
+    <div style="text-align:center;margin-top:22px" data-reveal>
+      <img id="qrHantang" src="assets/qr-hantang.png" alt="云鬓花颜体验版二维码"
+           style="width:168px;height:168px;object-fit:cover;border:2px solid rgba(176,141,87,.5);border-radius:12px"
+           onerror="this.style.display='none';var n=document.getElementById('qrNote');if(n)n.style.display=''">
+      <p id="qrNote" style="display:none;font-size:13px;color:#8a7a5f;margin-top:10px;letter-spacing:1px">
+        二维码待放入（微信开发者工具 → 体验版 二维码截图，保存为 assets/qr-hantang.png 后此处自动显示）
+      </p>
+      <p style="font-size:12px;color:#8a7a5f;margin-top:6px">体验版二维码 · 微信扫码试用</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 项目总结 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">07</span>
+      <h3>项目总结</h3>
+      <span class="k-en">Summary</span>
+    </div>
+    <div class="dsum" data-reveal>
+      <div class="st">TAKEAWAY</div>
+      <p>
+        这一项目同时具备<b>艺术性</b>（汉唐妆造的视觉呈现）、<b>技术性</b>（I2I 生成 + 人脸识别 + 小程序全栈）、
+        <b>研究性</b>（考据知识库 + 五维评价体系支撑毕业论文）、<b>产品性</b>（体验版上线，完整用户链路）。
+        它不是「用 AI 生成了几张唐妆照片」，而是一整套从考据到生成的系统设计。
+      </p>
+      <p>毕业论文方向：《基于 AI 技术的汉唐妆造个性化生成与沉浸式体验研究》。</p>
+      <a class="back" href="index.html">返回作品集首页</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 上一项目 / 下一项目 ===================== -->
+<section class="pn">
+  <div class="container">
+    <div class="pn-head">More Projects — 查看更多作品</div>
+    <div class="pn-grid">
+      <a class="pn-card" href="tujunjun.html">
+        <img src="assets/tujun1.jpg" alt="兔军军" loading="lazy">
+        <div class="pl"><span class="dir">← 上一项目</span><span class="tt">兔军军</span></div>
+      </a>
+      <a class="pn-card" href="leyou.html">
+        <img src="assets/cz_site1.jpg" alt="乐游" loading="lazy">
+        <div class="pl"><span class="dir">下一项目 →</span><span class="tt">乐游</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-logo">项建卓 · 作品集</div>
+    <div class="f-line"><a href="index.html">首页</a> · <a href="leyou.html">乐游</a> · <a href="shanhaiji.html">山海纪</a> · <a href="tujunjun.html">兔军军</a></div>
+    <div class="f-line">© 2026 项建卓</div>
+  </div>
+</footer>
+
+<button class="back-top" aria-label="返回顶部">↑</button>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

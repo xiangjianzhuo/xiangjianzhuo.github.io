@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>项建卓 · 设计作品集（打印版式）</title>
+<meta name="description" content="项建卓 — 数字媒体艺术设计硕士 · AI 生成设计 / 文化数字化 / 交互媒体 / 数字体验 · Selected Works 2023–2026">
+<style>
+/* ==========================================================
+   版式系统：项建卓 作品集 PDF（A4 打印版式）
+   汉唐朱砂配色 · 杂志式版面
+   ========================================================== */
+
+/* ---------- 页面设定 ---------- */
+@page {
+  size: 337mm 190mm;   /* 16:9 横幅（PPT 宽窄版式） */
+  margin: 0;
+}
+@page :first { margin: 0; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  background: #e8e2d4;
+  color: #2b2b2b;
+  line-height: 1.6;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* 变量 */
+:root {
+  --ink: #2b2b2b;
+  --ink-2: #555;
+  --paper: #f7f3ec;      /* 米纸底 */
+  --paper-2: #efe9dd;
+  --cinnabar: #9e2b25;   /* 朱红 */
+  --cinnabar-2: #c0392b;
+  --gold: #b08d57;       /* 金 */
+  --line: #ddd4c3;
+  --deep: #2b2118;       /* 深棕 */
+}
+
+/* ---------- 打印页 ---------- */
+.page {
+  width: 337mm;
+  min-height: 190mm;
+  margin: 0 auto 16mm;
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  box-shadow: 0 2px 12px rgba(0,0,0,.15);
+}
+@media print {
+  body { background: #fff; }
+  .page { margin: 0; box-shadow: none; page-break-after: always; }
+}
+
+/* 页码 & 页眉 */
+.pg {
+  position: absolute;
+  bottom: 12mm;
+  right: 16mm;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #8a7a5f;
+}
+.ph {
+  position: absolute;
+  top: 12mm;
+  left: 16mm;
+  right: 16mm;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #8a7a5f;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 4mm;
+}
+
+/* ---------- 通用排版 ---------- */
+.wrap { padding: 26mm 16mm 22mm; }
+.k { /* 中文小标题 */
+  font-size: 12px; color: var(--cinnabar); letter-spacing: 4px; font-weight: 700;
+}
+.big-title { font-size: 40px; font-weight: 700; letter-spacing: 4px; line-height: 1.2; }
+.en-title { font-size: 13px; color: var(--gold); letter-spacing: 6px; text-transform: uppercase; }
+.lead { font-size: 14px; color: var(--ink-2); line-height: 1.9; }
+
+.hr { border: none; border-top: 1px solid var(--line); margin: 8mm 0; }
+
+/* ---------- 信息图：知识库树 ---------- */
+.tree { font-size: 12.5px; }
+.tree .trunk {
+  background: var(--cinnabar); color: #fff;
+  display: inline-block; padding: 3mm 6mm; border-radius: 3mm;
+  font-weight: 700; letter-spacing: 2px; margin-bottom: 7mm;
+}
+.tree ul { list-style: none; }
+.tree .branch {
+  border-left: 2px solid var(--line);
+  padding: 0 0 5mm 8mm;
+  margin-left: 3mm;
+}
+.tree .branch > li { position: relative; margin-bottom: 6mm; }
+.tree .branch > li::before {
+  content: ""; position: absolute; left: -9mm; top: 5px;
+  width: 6mm; height: 2px; background: var(--line);
+}
+.tree .node {
+  font-weight: 700; font-size: 13px; color: var(--ink);
+  display: flex; align-items: center; gap: 3mm;
+}
+.tree .node .dot { width: 3mm; height: 3mm; border-radius: 50%; background: var(--cinnabar); flex: none; }
+.tree .leaves { display: flex; flex-wrap: wrap; gap: 2mm; margin-top: 3mm; }
+.tree .leaf {
+  font-size: 11px; background: var(--paper-2); border: 1px solid var(--line);
+  padding: 1mm 4mm; border-radius: 999px; color: var(--ink-2);
+}
+
+/* ---------- 信息图：AI 工作流 ---------- */
+.flow { display: flex; align-items: center; gap: 2mm; flex-wrap: wrap; }
+.flow .step {
+  flex: 1; min-width: 40mm; text-align: center;
+  background: #fffdf8; border: 1px solid var(--line); border-radius: 3mm;
+  padding: 4mm 3mm;
+}
+.flow .step .ic { font-size: 20px; }
+.flow .step .t { font-size: 12.5px; font-weight: 700; margin-top: 2mm; }
+.flow .step .s { font-size: 10.5px; color: var(--ink-2); margin-top: 1mm; }
+.flow .step.hl { background: var(--cinnabar); border-color: var(--cinnabar); color: #fff; }
+.flow .step.hl .s { color: rgba(255,255,255,.85); }
+.flow .arr { color: var(--gold); font-size: 18px; flex: none; }
+
+/* ---------- 信息图：五维雷达 ---------- */
+.radar-block { display: flex; gap: 10mm; align-items: center; }
+.radar-block svg text { font-family: "PingFang SC", sans-serif; }
+.radar-legend { font-size: 12px; color: var(--ink-2); line-height: 2; }
+
+/* ---------- 大图跨页 ---------- */
+.spread { padding: 0; }
+.spread .img-full { width: 100%; height: 297mm; object-fit: cover; display: block; }
+.spread .cap {
+  position: absolute; left: 16mm; bottom: 14mm;
+  color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.6);
+  font-size: 13px; letter-spacing: 2px;
+}
+.spread .cap b { font-size: 18px; display: block; letter-spacing: 3px; }
+
+/* ---------- 图注 / 占位 ---------- */
+.figcap { font-size: 10.5px; color: #8a7a5f; margin-top: 2mm; letter-spacing: 1px; }
+.ph-old { /* 素材占位 */
+  display: flex; align-items: center; justify-content: center;
+  background: repeating-linear-gradient(45deg, #efe9dd, #efe9dd 8px, #e6dfcf 8px, #e6dfcf 16px);
+  border: 1px dashed var(--gold); color: #8a7a5f;
+  font-size: 12px; letter-spacing: 2px; border-radius: 3mm;
+  min-height: 30mm;
+}
+
+/* ---------- 章节页 ---------- */
+.chapter {
+  background: var(--deep); color: #f2ead9;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 26mm;
+}
+.chapter .no {
+  font-size: 14px; color: var(--gold); letter-spacing: 6px; margin-bottom: 8mm;
+}
+.chapter h1 { font-size: 44px; font-weight: 700; letter-spacing: 6px; }
+.chapter .en { font-size: 15px; color: var(--gold); letter-spacing: 8px; margin-top: 6mm; text-transform: uppercase; }
+.chapter .tags { margin-top: 12mm; display: flex; flex-wrap: wrap; gap: 3mm; }
+.chapter .tags span {
+  border: 1px solid rgba(176,141,87,.6); color: #d8c7a8;
+  font-size: 11px; padding: 2mm 5mm; border-radius: 999px; letter-spacing: 1px;
+}
+
+/* ---------- 卡片（游戏/实验章节） ---------- */
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.card {
+  background: #fffdf8; border: 1px solid var(--line); border-radius: 3mm; overflow: hidden;
+}
+.card img { width: 100%; height: 42mm; object-fit: cover; display: block; }
+.card .c-body { padding: 4mm; }
+.card .c-t { font-size: 13.5px; font-weight: 700; }
+.card .c-m { font-size: 10.5px; color: var(--gold); letter-spacing: 1px; margin: 1mm 0; }
+.card .c-d { font-size: 11.5px; color: var(--ink-2); }
+
+/* ---------- 荣誉墙 ---------- */
+.honor-list { list-style: none; font-size: 13px; }
+.honor-list li { padding: 3mm 0; border-bottom: 1px dashed var(--line); display: flex; gap: 4mm; align-items: baseline; }
+.honor-list li .yr { color: var(--gold); font-size: 11.5px; flex: none; width: 20mm; }
+
+/* ---------- 技能 ---------- */
+.skills2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.skill2 { border: 1px solid var(--line); border-radius: 3mm; padding: 4mm 5mm; background: #fffdf8; }
+.skill2 b { color: var(--cinnabar); font-size: 13px; }
+.skill2 .bar { height: 2mm; background: var(--paper-2); border-radius: 2mm; margin-top: 2mm; overflow: hidden; }
+.skill2 .bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--cinnabar), var(--cinnabar-2)); }
+.skill2 .d { font-size: 11px; color: var(--ink-2); margin-top: 2mm; }
+
+/* ---------- 联系页 ---------- */
+.end { background: var(--deep); color: #f2ead9; display: flex; flex-direction: column; justify-content: center; padding: 26mm; }
+.end .big { font-size: 34px; font-weight: 700; letter-spacing: 6px; }
+.end a { color: var(--gold); text-decoration: none; letter-spacing: 1px; }
+.end .row { margin-top: 6mm; font-size: 14px; color: #d8c7a8; }
+.end .row b { color: #f2ead9; letter-spacing: 2px; }
+
+@media print {
+  .page { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ P01 封面 ============ -->
+<section class="page" style="background:var(--deep);color:#f2ead9;display:flex;flex-direction:column;justify-content:center;padding:26mm">
+  <div style="position:absolute;right:-30px;top:-40px;font-size:380px;line-height:1;color:rgba(176,141,87,.1);font-family:'STKaiti','KaiTi',serif">汉</div>
+  <div style="position:relative">
+    <div style="font-size:12px;letter-spacing:8px;color:#b08d57">PORTFOLIO</div>
+    <h1 style="font-size:64px;font-weight:700;letter-spacing:10px;margin-top:10mm;line-height:1.2">项建卓</h1>
+    <div style="font-size:15px;letter-spacing:8px;color:#d8c7a8;margin-top:8mm">XIANG JIANZHUO</div>
+    <div style="font-size:12px;letter-spacing:4px;color:#b08d57;margin-top:18mm">DIGITAL MEDIA ART &amp; DESIGN</div>
+    <div style="font-size:12px;letter-spacing:4px;color:#d8c7a8;margin-top:3mm">AI GENERATIVE DESIGN · CULTURAL HERITAGE·</div>
+    <div style="font-size:12px;letter-spacing:4px;color:#d8c7a8;margin-top:3mm">INTERACTIVE MEDIA · DIGITAL EXPERIENCE</div>
+    <div style="font-size:12px;letter-spacing:5px;color:#b08d57;margin-top:16mm">SELECTED WORKS 2023 — 2026</div>
+  </div>
+  <div class="pg" style="color:#8a7a5f">01</div>
+</section>
+
+<!-- ============ P02 About ============ -->
+<section class="page">
+  <div class="ph"><span>ABOUT</span><span>项建卓 · 作品集</span></div>
+  <div class="wrap">
+    <div class="k">ABOUT ME</div>
+    <div style="font-size:34px;font-weight:700;letter-spacing:3px;margin:6mm 0">我研究「传统文化如何通过 AI、交互技术与数字媒介，被重新体验」。</div>
+    <div class="hr"></div>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:10mm">
+      <div>
+        <p class="lead">数字媒体艺术设计硕士在读 · 西安美术学院（2024–2027），本科数字媒体艺术（2020–2024 西安美术学院）。主攻 AI 生成设计、文化数字化、交互装置与新媒介表达。</p>
+        <p class="lead" style="margin-top:6mm">兴趣落在「传统文化与前沿技术的交界」：AI 汉唐妆造生成、文博考古数字化、山海神话 IP 化、游戏与交互叙事。软件与工具是实现研究的设计手段，而非目的。</p>
+        <p class="lead" style="margin-top:6mm">中共党员 · 考研专业第一 · 西安美术学院本科推免。意向岗位：AI 生成设计师 / 数字媒体交互 / UI 设计师。</p>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-radius:4mm;padding:6mm">
+        <div style="font-size:12px;font-weight:700;letter-spacing:3px;color:var(--cinnabar)">研究方向</div>
+        <ul style="list-style:none;margin-top:4mm;font-size:13px;line-height:2.2">
+          <li>▲ AI 生成设计（AIGC）</li>
+          <li>▲ 文化遗产数字化</li>
+          <li>▲ 交互装置 / 新媒体</li>
+          <li>▲ 文化 IP 与游戏设计</li>
+          <li>▲ 数字体验与沉浸式媒介</li>
+        </ul>
+        <div style="font-size:12px;font-weight:700;letter-spacing:3px;color:var(--cinnabar);margin-top:7mm">工具链</div>
+        <div style="margin-top:3mm;font-size:11.5px;color:var(--ink-2);line-height:1.9">
+          AI：腾讯混元 / Prompt 工程 / I2I 图生图<br>
+          3D：Maya / Blender<br>
+          交互：TouchDesigner / Max8 / Unity / UE5<br>
+          平面动效：PS / AI / AE / PR<br>
+          小程序：微信小程序 / 云开发
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pg">02</div>
+</section>
+
+<!-- ============ P03 目录 ============ -->
+<section class="page">
+  <div class="ph"><span>CONTENTS</span><span>项建卓 · 作品集</span></div>
+  <div class="wrap">
+    <div class="k">SELECTED WORKS</div>
+    <div style="font-size:30px;font-weight:700;letter-spacing:4px;margin:6mm 0 8mm">目录</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13.5px">
+      <tr><td style="padding:4mm 0;border-bottom:1px dashed var(--line);width:14mm;color:var(--gold);font-weight:700">01</td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line)"><b style="font-size:15px">云鬓花颜</b> — AI 汉唐妆造生成与沉浸式体验</td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line);color:var(--ink-2)">P06–P15</td></tr>
+      <tr><td style="padding:4mm 0;border-bottom:1px dashed var(--line);color:var(--gold);font-weight:700">02</td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line)"><b style="font-size:15px">乐游</b> — 文博考古 × TouchDesigner 交互艺术</td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line);color:var(--ink-2)">P16–P21</td></tr>
+      <tr><td style="padding:4mm 0;border-bottom:1px dashed var(--line);color:var(--gold);font-weight:700">03</td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line)"><b style="font-size:15px">山海纪</b> — 山海经 TRPG 与动态视觉</td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line);color:var(--ink-2)">P22–P27</td></tr>
+      <tr><td style="padding:4mm 0;border-bottom:1px dashed var(--line);color:var(--gold);font-weight:700">04</td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line)"><b style="font-size:15px">兔军军</b> — 秦兵马俑文化 IP</td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line);color:var(--ink-2)">P28–P32</td></tr>
+      <tr><td style="padding:4mm 0;border-bottom:1px dashed var(--line);color:var(--gold);font-weight:700">05</td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line)"><b style="font-size:15px">Selected Games</b> — 游戏设计选集</td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line);color:var(--ink-2)">P33–P36</td></tr>
+      <tr><td style="padding:4mm 0;border-bottom:1px dashed var(--line);color:var(--gold);font-weight:700">06</td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line)"><b style="font-size:15px">Experimental / Motion / 3D</b> — 早期实验与三维</td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line);color:var(--ink-2)">P37–P39</td></tr>
+      <tr><td style="padding:4mm 0;border-bottom:1px dashed var(--line);color:var(--gold);font-weight:700">—</td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line)"><b style="font-size:15px">论文 / 专利 / 展览 / 获奖</b></td>
+          <td style="padding:4mm 0;border-bottom:1px dashed var(--line);color:var(--ink-2)">P40</td></tr>
+    </table>
+    <div style="margin-top:10mm;font-size:11.5px;color:#8a7a5f;letter-spacing:1px">按「研究问题 — 设计过程 — 技术实现 — 研究产出」组织，软件是手段，概念与被重新体验的文化是目的。</div>
+  </div>
+  <div class="pg">03</div>
+</section>
+
+<!-- ============ P04 章节页：云鬓花颜 ============ -->
+<section class="page chapter">
+  <div class="no">PROJECT 01</div>
+  <h1>云鬓花颜</h1>
+  <div class="en">AI HAN-TANG MAKEUP GENERATION &amp; IMMERSIVE EXPERIENCE</div>
+  <div class="tags">
+    <span>毕业设计</span><span>导师课题衍生</span><span>AI 生成</span><span>小程序</span><span>人脸识别</span><span>考据知识库</span><span>Prompt 工程</span>
+  </div>
+  <div class="pg" style="color:#8a7a5f">04</div>
+</section>
+
+<!-- ============ P05 云鬓花颜 · 项目概述 ============ -->
+<section class="page">
+  <div class="ph"><span>PROJECT 01 · 云鬓花颜</span><span>项建卓 · 作品集</span></div>
+  <div class="wrap">
+    <div class="k">OVERVIEW — 研究问题</div>
+    <div style="font-size:26px;font-weight:700;letter-spacing:2px;margin:6mm 0;line-height:1.5">AI 生成，能不能让「汉唐妆造」不只是被看见，而是被体验、被考据、被理解？</div>
+    <div class="hr"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm">
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--cinnabar);letter-spacing:2px">背景</div>
+        <p class="lead" style="margin-top:2mm">汉唐妆造存在于墓室壁画、文物与文献，公众难以直接体验。依托导师课题《基于 AIGC 人工智能生成艺术的文物数字化复刻与创新转化应用研究》（懿德太子墓壁画样本），负责妆造与色彩分析方向，衍生出面向大众的「云鬓花颜」体验研究。</p>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:var(--cinnabar);letter-spacing:2px">我的角色</div>
+        <p class="lead" style="margin-top:2mm">从研究问题定义、考据知识库构建、生成系统设计，到小程序产品与全栈开发、五维评价体系与毕业论文研究——完整闭环的个人研究项目。</p>
+        <div style="margin-top:4mm;font-size:11.5px;color:#8a7a5f">【待你核对】课题全称、样本细节与角色分工如与毕业论文不一致，请指出。</div>
+      </div>
+    </div>
+    <div class="hr"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:5mm;text-align:center">
+      <div style="background:#fffdf8;border:1px solid var(--line);border-radius:3mm;padding:5mm">
+        <div style="font-size:26px;font-weight:700;color:var(--cinnabar)">100+</div>
+        <div style="font-size:11.5px;color:var(--ink-2);margin-top:2mm">汉唐妆造考据知识库条目</div>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-radius:3mm;padding:5mm">
+        <div style="font-size:26px;font-weight:700;color:var(--cinnabar)">6</div>
+        <div style="font-size:11.5px;color:var(--ink-2);margin-top:2mm">考据风格 Prompt 体系</div>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-radius:3mm;padding:5mm">
+        <div style="font-size:26px;font-weight:700;color:var(--cinnabar)">2</div>
+        <div style="font-size:11.5px;color:var(--ink-2);margin-top:2mm">阶段生成（AI 形象 → 妆造）</div>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-radius:3mm;padding:5mm">
+        <div style="font-size:26px;font-weight:700;color:var(--cinnabar)">5</div>
+        <div style="font-size:11.5px;color:var(--ink-2);margin-top:2mm">维评价评分体系</div>
+      </div>
+    </div>
+  </div>
+  <div class="pg">05</div>
+</section>
+
+<!-- ============ P06 云鬓花颜 · 知识库 ============ -->
+<section class="page">
+  <div class="ph"><span>PROJECT 01 · 云鬓花颜</span><span>项建卓 · 作品集</span></div>
+  <div class="wrap">
+    <div class="k">P07 · KNOWLEDGE BASE — 考据知识库信息可视化</div>
+    <div style="font-size:24px;font-weight:700;letter-spacing:2px;margin:5mm 0 9mm">100+ 条汉唐妆造考据如何组织</div>
+
+    <div class="tree">
+      <span class="trunk">汉唐妆造考据知识库 · 100+ 条目</span>
+      <ul class="branch">
+        <li>
+          <div class="node"><span class="dot"></span>发型</div>
+          <div class="leaves"><span class="leaf">双螺髻</span><span class="leaf">惊鸿髻</span><span class="leaf">堕马髻</span><span class="leaf">高髻</span><span class="leaf">倭堕髻</span><span class="leaf">……</span></div>
+        </li>
+        <li>
+          <div class="node"><span class="dot"></span>眉形</div>
+          <div class="leaves"><span class="leaf">却月眉</span><span class="leaf">柳叶眉</span><span class="leaf">远山眉</span><span class="leaf">八字眉</span><span class="leaf">涵烟眉</span><span class="leaf">……</span></div>
+        </li>
+        <li>
+          <div class="node"><span class="dot"></span>花钿 / 面饰</div>
+          <div class="leaves"><span class="leaf">梅花钿</span><span class="leaf">花钿式</span><span class="leaf">斜红</span><span class="leaf">妆靥</span><span class="leaf">……</span></div>
+        </li>
+        <li>
+          <div class="node"><span class="dot"></span>色彩</div>
+          <div class="leaves"><span class="leaf">石青</span><span class="leaf">朱砂</span><span class="leaf">赭石</span><span class="leaf">黛黑</span><span class="leaf">胭脂</span><span class="leaf">铅白</span><span class="leaf">……</span></div>
+        </li>
+        <li>
+          <div class="node"><span class="dot"></span>纹样</div>
+          <div class="leaves"><span class="leaf">忍冬纹</span><span class="leaf">宝相花</span><span class="leaf">联珠纹</span><span class="leaf">团窠纹</span><span class="leaf">……</span></div>
+        </li>
+        <li>
+          <div class="node"><span class="dot"></span>来源</div>
+          <div class="leaves"><span class="leaf">墓室壁画</span><span class="leaf">文献考据</span><span class="leaf">考古报告</span><span class="leaf">文物图像</span><span class="leaf">……</span></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="hr"></div>
+    <div style="font-size:12px;color:#8a7a5f">每一妆造要素均追溯来源（壁画样本 / 文献 / 考古报告），生成结果附考据注释，让 AI 生成的「美」有据可查。</div>
+    <div style="margin-top:3mm;font-size:11.5px;color:#c0392b">【待你核对】以上条目为示意，请用你知识库的真实分类与代表性词条替换（提供 Excel/文档 或直接口述）。</div>
+  </div>
+  <div class="pg">06</div>
+</section>
+
+<!-- ============ P07 云鬓花颜 · AI 工作流 ============ -->
+<section class="page">
+  <div class="ph"><span>PROJECT 01 · 云鬓花颜</span><span>项建卓 · 作品集</span></div>
+  <div class="wrap">
+    <div class="k">P08 · AI WORKFLOW — 生成工作流</div>
+    <div style="font-size:24px;font-weight:700;letter-spacing:2px;margin:5mm 0 10mm">从用户照片到考据妆造的完整管线</div>
+
+    <div class="flow">
+      <div class="step"><div class="ic">🖼️</div><div class="t">User Photo</div><div class="s">用户上传照片</div></div>
+      <div class="arr">→</div>
+      <div class="step"><div class="ic">🧑‍🔬</div><div class="t">Face Analysis</div><div class="s">人脸识别分析</div></div>
+      <div class="arr">→</div>
+      <div class="step"><div class="ic">📋</div><div class="t">Feature Extraction</div><div class="s">身份 / 面部特征提取</div></div>
+      <div class="arr">→</div>
+      <div class="step hl"><div class="ic">📚</div><div class="t">Knowledge + Prompt</div><div class="s">考据知识库 → Prompt 构建</div></div>
+      <div class="arr">→</div>
+      <div class="step"><div class="ic">✨</div><div class="t">AI Generation</div><div class="s">腾讯混元 I2I 生成</div></div>
+      <div class="arr">→</div>
+      <div class="step"><div class="ic">🎎</div><div class="t">Han-Tang Result</div><div class="s">汉唐妆造结果</div></div>
+      <div class="arr">→</div>
+      <div class="step"><div class="ic">📜</div><div class="t">Annotation</div><div class="s">考据注释反馈</div></div>
+    </div>
+
+    <div class="hr"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm">
+      <div style="background:#fffdf8;border:1px solid var(--line);border-radius:3mm;padding:5mm">
+        <div style="font-size:13px;font-weight:700;color:var(--cinnabar)">两阶段生成</div>
+        <p style="font-size:12.5px;color:var(--ink-2);margin-top:2mm">先用照片生成 AI 形象，再进行妆造生成——分离「本人样貌」与「妆造风格」，避免风格迁移破坏身份特征。</p>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-radius:3mm;padding:5mm">
+        <div style="font-size:13px;font-weight:700;color:var(--cinnabar)">Prompt 结构</div>
+        <p style="font-size:12.5px;color:var(--ink-2);margin-top:2mm">身份描述 + 妆造要素（发型/眉形/花钿/色彩/纹样）+ 风格限定 + 考据来源注释，逐项可解构、可复现。</p>
+      </div>
+    </div>
+    <div style="margin-top:5mm;font-size:11.5px;color:#c0392b">【待你核对】工作流与实际实现如有出入（如人脸识别、混元模型调用顺序），请指正。</div>
+  </div>
+  <div class="pg">07</div>
+</section>
+
+<!-- ============ P08 云鬓花颜 · 生成系统 ============ -->
+<section class="page">
+  <div class="ph"><span>PROJECT 01 · 云鬓花颜</span><span>项建卓 · 作品集</span></div>
+  <div class="wrap">
+    <div class="k">P09 · GENERATION SYSTEM — 六类妆造风格系统</div>
+    <div style="font-size:24px;font-weight:700;letter-spacing:2px;margin:5mm 0 9mm">我设计的不是「几个 Prompt」，而是一套生成系统</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm">
+      <div style="background:#fffdf8;border:1px solid var(--line);border-top:3px solid var(--cinnabar);border-radius:3mm;padding:4mm">
+        <div style="font-size:13px;font-weight:700">唐 · 敦煌</div>
+        <div style="font-size:10.5px;color:var(--gold);margin-top:1mm">STYLE 01</div>
+        <div style="font-size:11px;color:var(--ink-2);margin-top:2mm">飘带霓裳 · 供养人风</div>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-top:3px solid var(--cinnabar);border-radius:3mm;padding:4mm">
+        <div style="font-size:13px;font-weight:700">唐 · 花钿中</div>
+        <div style="font-size:10.5px;color:var(--gold);margin-top:1mm">STYLE 02</div>
+        <div style="font-size:11px;color:var(--ink-2);margin-top:2mm">仕女花钿 · 唐代宫廷风</div>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-top:3px solid var(--cinnabar);border-radius:3mm;padding:4mm">
+        <div style="font-size:13px;font-weight:700">唐 · 龙妆</div>
+        <div style="font-size:10.5px;color:var(--gold);margin-top:1mm">STYLE 03</div>
+        <div style="font-size:11px;color:var(--ink-2);margin-top:2mm">盛唐华彩 · 节日盛装</div>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-top:3px solid var(--cinnabar);border-radius:3mm;padding:4mm">
+        <div style="font-size:13px;font-weight:700">汉 · 默认</div>
+        <div style="font-size:10.5px;color:var(--gold);margin-top:1mm">STYLE 04</div>
+        <div style="font-size:11px;color:var(--ink-2);margin-top:2mm">沉静端雅 · 汉代风骨</div>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-top:3px solid var(--cinnabar);border-radius:3mm;padding:4mm">
+        <div style="font-size:13px;font-weight:700">风格 · 05</div>
+        <div style="font-size:10.5px;color:var(--gold);margin-top:1mm">STYLE 05</div>
+        <div style="font-size:11px;color:var(--ink-2);margin-top:2mm">【待你核对】风格名</div>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-top:3px solid var(--cinnabar);border-radius:3mm;padding:4mm">
+        <div style="font-size:13px;font-weight:700">风格 · 06</div>
+        <div style="font-size:10.5px;color:var(--gold);margin-top:1mm">STYLE 06</div>
+        <div style="font-size:11px;color:var(--ink-2);margin-top:2mm">【待你核对】风格名</div>
+      </div>
+      <div style="background:#fdf6ec;border:1px dashed var(--gold);border-radius:3mm;padding:4mm;grid-column:span 3">
+        <div style="font-size:11.5px;color:#8a7a5f">素材对应：hantang-dunhuang / hantang-huanizhong（花钿中）/ hantang-longzhang（龙妆）/ hantang-default（默认）已就位，本页下方可嵌入对应生成图。</div>
+      </div>
+    </div>
+    <div style="margin-top:6mm;font-size:11.5px;color:#c0392b">【待你核对】六类风格的准确命名与排序请以你的实际系统为准（assets 中已有的四张风格图可直接放版）。</div>
+  </div>
+  <div class="pg">08</div>
+</section>
+
+<!-- ============ P09 云鬓花颜 · 视觉结果跨页 ============ -->
+<section class="page spread" style="background:#2b2118">
+  <img class="img-full" src="../assets/hantang-ui1.jpg" alt="云鬓花颜 生成结果">
+  <div class="cap"><b>VISUAL RESULTS PART 01</b>原图 → AI 汉唐妆造 · 生成结果大图</div>
+  <div class="pg" style="color:#c9b895">09</div>
+</section>
+
+<!-- ============ P10 云鬓花颜 · 小程序 UX ============ -->
+<section class="page">
+  <div class="ph"><span>PROJECT 01 · 云鬓花颜</span><span>项建卓 · 作品集</span></div>
+  <div class="wrap">
+    <div class="k">P12 · MINI PROGRAM / UX — 小程序体验流程</div>
+    <div style="font-size:24px;font-weight:700;letter-spacing:2px;margin:5mm 0 9mm">产品闭环：上传照片 → 生成 → 分享</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4mm">
+      <div style="background:#fffdf8;border:1px solid var(--line);border-radius:3mm;padding:4mm;text-align:center">
+        <div class="ph-old" style="min-height:60mm">① 照片上传<br><span style="font-size:10px">界面截图占位</span></div>
+        <div style="font-size:12px;font-weight:700;margin-top:3mm">照片上传</div>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-radius:3mm;padding:4mm;text-align:center">
+        <div class="ph-old" style="min-height:60mm">② 人脸分析<br><span style="font-size:10px">界面截图占位</span></div>
+        <div style="font-size:12px;font-weight:700;margin-top:3mm">人脸分析</div>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-radius:3mm;padding:4mm;text-align:center">
+        <div class="ph-old" style="min-height:60mm">③ 妆造选择<br><span style="font-size:10px">界面截图占位</span></div>
+        <div style="font-size:12px;font-weight:700;margin-top:3mm">妆造选择</div>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-radius:3mm;padding:4mm;text-align:center">
+        <div class="ph-old" style="min-height:60mm">④ AI 生成<br><span style="font-size:10px">界面截图占位</span></div>
+        <div style="font-size:12px;font-weight:700;margin-top:3mm">AI 生成</div>
+      </div>
+      <div style="background:#fffdf8;border:1px solid var(--line);border-radius:3mm;padding:4mm;text-align:center">
+        <div class="ph-old" style="min-height:60mm">⑤ 结果分享<br><span style="font-size:10px">界面截图占位</span></div>
+        <div style="font-size:12px;font-weight:700;margin-top:3mm">历史信息 + 分享</div>
+      </div>
+    </div>
+    <div style="margin-top:6mm;background:#fdf6ec;border:1px dashed var(--gold);border-radius:3mm;padding:4mm;font-size:11.5px;color:#8a7a5f">
+      【可用素材】assets 已有 hantang-ui1/2/3（真机界面）、hantang-shinU（画中仕女效果）、hantang-default/dunhuang/huanizhong/longzhang（四风格生成图）——你确认每个步骤对应哪张图后，我把占位替换成真机截图拼版。
+    </div>
+  </div>
+  <div class="pg">10</div>
+</section>
+
+<!-- ============ P11 云鬓花颜 · 评价与研究 ============ -->
+<section class="page">
+  <div class="ph"><span>PROJECT 01 · 云鬓花颜</span><span>项建卓 · 作品集</span></div>
+  <div class="wrap">
+    <div class="k">P13 · EVALUATION &amp; RESEARCH — 五维评价与研究产出</div>
+    <div style="font-size:24px;font-weight:700;letter-spacing:2px;margin:5mm 0 8mm">让生成结果可评价、可研究</div>
+
+    <div class="radar-block">
+      <svg width="320" height="300" viewBox="0 0 320 300">
+        <!-- 五边形网格 -->
+        <g stroke="#ddd4c3" fill="none" stroke-width="1">
+          <polygon points="160,42 278,114 235,242 85,242 42,114" />
+          <polygon points="160,82 244,134 216,222 104,222 76,134" />
+          <polygon points="160,122 210,154 197,202 123,202 110,154" />
+          <polygon points="160,162 176,174 178,182 142,182 144,174" />
+        </g>
+        <g stroke="#ddd4c3" stroke-width="1">
+          <line x1="160" y1="42" x2="160" y2="242" />
+          <line x1="278" y1="114" x2="42" y2="114" />
+          <line x1="235" y1="242" x2="85" y2="242" />
+        </g>
+        <!-- 数据多边形（示例值） -->
+        <polygon points="160,82 244,134 197,202 123,202 110,154" fill="rgba(158,43,37,.25)" stroke="#9e2b25" stroke-width="2.5" />
+        <g fill="#9e2b25">
+          <circle cx="160" cy="82" r="4" /><circle cx="244" cy="134" r="4" />
+          <circle cx="197" cy="202" r="4" /><circle cx="123" cy="202" r="4" />
+          <circle cx="110" cy="154" r="4" />
+        </g>
+        <g font-size="12" fill="#2b2b2b" text-anchor="middle">
+          <text x="160" y="26">考据准确度</text>
+          <text x="300" y="112">生成质量</text>
+          <text x="252" y="262">历史还原度</text>
+          <text x="68" y="262">体验满意度</text>
+          <text x="16" y="118">身份保持度</text>
+        </g>
+      </svg>
+      <div class="radar-legend">
+        <div><b style="color:var(--cinnabar)">五维评价体系</b></div>
+        <div>依据用户反馈与生成结果，从考据准确度 / 生成质量 / 历史还原度 / 体验满意度 / 身份保持度五个维度量化评分。</div>
+        <div style="margin-top:3mm;color:#8a7a5f">【待你核对】五维名称、维度数、示例分值请用你论文实际体系替换；此图目前为示意值。</div>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+    <div style="background:#2b2118;color:#f2ead9;border-radius:3mm;padding:6mm">
+      <div style="font-size:13px;font-weight:700;color:var(--gold);letter-spacing:2px">GRADUATION RESEARCH</div>
+      <div style="font-size:16px;font-weight:700;margin-top:2mm">《基于 AI 技术的汉唐妆造个性化生成与沉浸式体验研究》</div>
+      <div style="font-size:12px;color:#c9b895;margin-top:2mm">艺术性 + 技术性 + 研究性 + 产品性的完整闭环</div>
+    </div>
+    <div style="margin-top:4mm;font-size:11.5px;color:#c0392b">【待你核对】毕业论文实际标题。</div>
+  </div>
+  <div class="pg">11</div>
+</section>
+
+</body>
+</html>
