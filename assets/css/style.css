@@ -213,6 +213,10 @@ section.sec.dark .sec-head .more { color: #c9b895; }
 }
 .oc .out::after { content: ""; }
 
+/* 无外链的本地作品卡：不暗示可点击 */
+.oc.no-link { cursor: default; }
+.oc.no-link:hover img { transform: none; }
+
 /* ============================================================
    首页 · 荣誉墙 / 技能
    ============================================================ */
