@@ -381,6 +381,42 @@ footer a:hover { color: var(--gold); }
 .pstep .pimgs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); }
 .pstep .pimgs.one { grid-template-columns: 1fr; }
 
+/* ============================================================
+   傩灵异想 · 厚重黑金主题
+   只作用于 <body data-page="nuoling">：整页覆盖纸色变量，
+   画廊 / 章节头 / 正文等组件自动换肤；再用几条规则补写死的浅色。
+   ============================================================ */
+body[data-page="nuoling"] {
+  --paper: #0f0c09;              /* 近黑底（偏暖） */
+  --paper-2: #1a1510;
+  --card: #16120e;
+  --line: rgba(176, 141, 87, .24);
+  --ink: #f2e8d5;                /* 米金正文 */
+  --ink-2: #c8b795;
+  --gold: #c9a45f;
+  --cinnabar: #a52f27;
+}
+/* 拿 --ink 当底色的组件（顶部导航 / 页脚）要单独压黑，否则会变米色 */
+body[data-page="nuoling"] .site-header { background: #0b0907; border-bottom: 1px solid rgba(176,141,87,.18); }
+body[data-page="nuoling"] footer { background: #0b0907; }
+/* 写死的深棕说明文字在黑底上会糊，换暖灰 */
+body[data-page="nuoling"] .gallery .g-cap,
+body[data-page="nuoling"] .vnote,
+body[data-page="nuoling"] .figure .note,
+body[data-page="nuoling"] .dsec .dsec-head .k-en { color: #9c8d74; }
+/* 整幅卡：黑金描边 + 外阴影，做出「厚重」的压手感 */
+body[data-page="nuoling"] .gallery-wide .g-item {
+  background: #16120e;
+  border-color: rgba(176, 141, 87, .22);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, .55);
+}
+body[data-page="nuoling"] .flow .fstep { background: #16120e; border-color: rgba(176,141,87,.22); }
+body[data-page="nuoling"] .flow .fstep .fs { color: #9c8d74; }
+/* 封面压暗更重，让白字标题压得住黑金卡面 */
+body[data-page="nuoling"] .dcover::after {
+  background: linear-gradient(180deg, rgba(10,8,6,.72) 0%, rgba(10,8,6,.40) 38%, rgba(10,8,6,.94) 100%);
+}
+
 /* 项目总结 */
 .dsum {
   background: var(--card); border: 1px solid var(--line); border-radius: 14px;
