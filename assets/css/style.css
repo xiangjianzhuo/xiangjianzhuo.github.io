@@ -365,6 +365,19 @@ footer a:hover { color: var(--gold); }
 .gallery-wide .g-item:hover img { transform: none; }
 .gallery-wide .g-cap { text-align: center; margin-top: 10px; }
 
+/* ============================================================
+   山海纪 · 神兽卡面墙（透明底卡面，不加卡纸，靠投影浮起）
+   ============================================================ */
+.cardwall { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px 18px; }
+.cardwall figure { margin: 0; }
+.cardwall img {
+  width: 100%; height: auto; display: block;
+  filter: drop-shadow(0 12px 26px rgba(32, 29, 24, .26));
+  transition: transform .45s cubic-bezier(.2, .7, .3, 1);
+}
+.cardwall figure:hover img { transform: translateY(-8px) rotate(-.8deg); }
+.cardwall figcaption { font-size: 11.5px; color: #8a7a5f; text-align: center; margin-top: 12px; letter-spacing: 3px; }
+
 /* 2 列 / 3 列整幅拼版（不裁切，卡纸装裱同 .gallery-wide） */
 .gallery-half { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .gallery-third { grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -556,6 +569,8 @@ body[data-page="nuoling"] .dcover::after {
   .psteps { grid-template-columns: 1fr; gap: 14px; }
   .pstep .pimgs { grid-template-columns: 1fr; }
   .gallery-half, .gallery-third { grid-template-columns: 1fr; }
+  .cardwall { grid-template-columns: repeat(2, 1fr); gap: 14px 10px; }
+  .cardwall figcaption { font-size: 11px; letter-spacing: 1px; }
   .duo, .profile { grid-template-columns: 1fr; gap: 22px; }
 
   .pn-grid { grid-template-columns: 1fr; gap: 22px; }
