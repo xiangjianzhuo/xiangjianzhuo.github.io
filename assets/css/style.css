@@ -365,6 +365,54 @@ footer a:hover { color: var(--gold); }
 .gallery-wide .g-item:hover img { transform: none; }
 .gallery-wide .g-cap { text-align: center; margin-top: 10px; }
 
+/* 2 列 / 3 列整幅拼版（不裁切，卡纸装裱同 .gallery-wide） */
+.gallery-half { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.gallery-third { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.gallery-half .g-item,
+.gallery-third .g-item { aspect-ratio: auto; background: var(--card); border: 1px solid var(--line); padding: 10px; }
+.gallery-half .g-item img,
+.gallery-third .g-item img { height: auto; object-fit: contain; }
+.gallery-half .g-item:hover img,
+.gallery-third .g-item:hover img { transform: none; }
+.gallery-half .g-cap,
+.gallery-third .g-cap { text-align: center; margin-top: 10px; }
+
+/* 左文右图（案例研究式：概念转化等） */
+.duo { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: center; }
+.duo-txt .dsub { font-size: 11.5px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; }
+.duo-txt h4 { font-size: 18px; font-weight: 700; letter-spacing: 1px; margin-top: 8px; }
+.duo-txt ul { list-style: none; margin-top: 18px; }
+.duo-txt li { position: relative; padding-left: 18px; font-size: 14px; line-height: 2.05; color: var(--ink-2); }
+.duo-txt li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
+.duo-txt .note { font-size: 12px; color: #9c8d74; margin-top: 16px; line-height: 1.9; }
+.duo figure { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
+.duo figure img { width: 100%; height: auto; border-radius: 8px; }
+.duo figure figcaption { font-size: 11px; color: #8a7a5f; text-align: center; margin-top: 10px; letter-spacing: 1px; }
+
+/* 概览信息条 */
+.meta-row { display: flex; flex-wrap: wrap; gap: 12px 30px; justify-content: center; margin-top: 32px; }
+.meta-row div { font-size: 13.5px; color: var(--ink-2); }
+.meta-row b { font-size: 11px; letter-spacing: 2px; color: var(--gold); margin-right: 9px; font-weight: 600; }
+
+/* 角色档案（潮玩发行式：左图右表） */
+.profile { display: grid; grid-template-columns: 1.3fr 1fr; gap: 44px; align-items: center; }
+.profile dl {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+}
+.profile dl > div { background: var(--card); padding: 15px 17px; }
+.profile dt { font-size: 11px; letter-spacing: 2px; color: var(--gold); }
+.profile dd { font-size: 14.5px; margin-top: 5px; color: var(--ink); line-height: 1.6; }
+.profile dd.todo { color: #9c8d74; }
+.profile figure { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
+.profile figure img { width: 100%; height: auto; border-radius: 8px; }
+
+/* 满幅出血（大图收尾，左右顶到屏幕边） */
+.bleed { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
+.bleed img { width: 100%; height: auto; display: block; }
+.bleed + .bleed { margin-top: 2px; }
+.bleed-cap { font-size: 11.5px; color: #8a7a5f; text-align: center; letter-spacing: 2px; padding: 14px 4vw 0; }
+
 /* 设计流程步骤卡（傩灵异想：7 步图文卡，2 列网格） */
 .psteps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 1100px; margin: 0 auto; }
 .pstep { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
@@ -401,11 +449,13 @@ body[data-page="nuoling"] .site-header { background: #0b0907; border-bottom: 1px
 body[data-page="nuoling"] footer { background: #0b0907; }
 /* 写死的深棕说明文字在黑底上会糊，换暖灰 */
 body[data-page="nuoling"] .gallery .g-cap,
+body[data-page="nuoling"] .duo figure figcaption,
+body[data-page="nuoling"] .bleed-cap,
 body[data-page="nuoling"] .vnote,
 body[data-page="nuoling"] .figure .note,
 body[data-page="nuoling"] .dsec .dsec-head .k-en { color: #9c8d74; }
 /* 整幅卡：黑金描边 + 外阴影，做出「厚重」的压手感 */
-body[data-page="nuoling"] .gallery-wide .g-item {
+body[data-page="nuoling"] .gallery .g-item {
   background: #16120e;
   border-color: rgba(176, 141, 87, .22);
   box-shadow: 0 18px 44px rgba(0, 0, 0, .55);
@@ -505,6 +555,8 @@ body[data-page="nuoling"] .dcover::after {
   .flow .fstep { flex: 1 1 44%; }
   .psteps { grid-template-columns: 1fr; gap: 14px; }
   .pstep .pimgs { grid-template-columns: 1fr; }
+  .gallery-half, .gallery-third { grid-template-columns: 1fr; }
+  .duo, .profile { grid-template-columns: 1fr; gap: 22px; }
 
   .pn-grid { grid-template-columns: 1fr; gap: 22px; }
 
