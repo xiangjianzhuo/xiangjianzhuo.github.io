@@ -378,6 +378,40 @@ footer a:hover { color: var(--gold); }
 .cardwall figure:hover img { transform: translateY(-8px) rotate(-.8deg); }
 .cardwall figcaption { font-size: 11.5px; color: #8a7a5f; text-align: center; margin-top: 12px; letter-spacing: 3px; }
 
+/* 卡面 → 动效章节跳转（点卡面把播放器跳到该卡片段） */
+.cardwall .cw-btn {
+  display: block; width: 100%; padding: 0; border: 0; background: none;
+  cursor: pointer; position: relative; -webkit-tap-highlight-color: transparent;
+}
+.cardwall .cw-btn::after {
+  content: "▶ 播这段"; position: absolute; left: 50%; bottom: 14px; transform: translate(-50%, 8px);
+  font-size: 11px; letter-spacing: 1px; color: #f7f3ec; background: rgba(158, 43, 37, .92);
+  padding: 5px 12px; border-radius: 999px; white-space: nowrap; pointer-events: none;
+  opacity: 0; transition: opacity .25s, transform .25s;
+}
+.cardwall .cw-btn:hover::after,
+.cardwall .cw-btn:focus-visible::after { opacity: 1; transform: translate(-50%, 0); }
+.cardwall .cw-btn:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 6px; border-radius: 6px; }
+.cardwall figure.playing img { transform: translateY(-8px) rotate(-.8deg); }
+.cardwall figure.playing .cw-btn::before {
+  content: ""; position: absolute; inset: -8px; border: 1px solid var(--cinnabar);
+  border-radius: 8px; box-shadow: 0 0 0 4px rgba(158, 43, 37, .08); pointer-events: none;
+}
+
+/* 动效章节条 */
+.chapter-bar { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 20px; }
+.chapter-bar .ch {
+  font: inherit; font-size: 12.5px; letter-spacing: 1px; color: var(--ink-2);
+  background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+  padding: 6px 14px; cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s, transform .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.chapter-bar .ch:hover { border-color: var(--gold); color: var(--ink); transform: translateY(-2px); }
+.chapter-bar .ch.on { background: var(--cinnabar); border-color: var(--cinnabar); color: #f7f3ec; font-weight: 600; }
+.chapter-bar .ch:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+.hint { font-size: 12.5px; color: var(--gold); letter-spacing: 1px; }
+
 /* 2 列 / 3 列整幅拼版（不裁切，卡纸装裱同 .gallery-wide） */
 .gallery-half { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .gallery-third { grid-template-columns: repeat(3, 1fr); gap: 16px; }

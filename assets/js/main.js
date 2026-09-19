@@ -108,6 +108,79 @@
     });
   }
 
+  /* ---------- 山海纪：点卡面 / 章节按钮 → 卡面动效跳到该卡片段 ----------
+     时间点来自对「加字粒子.mp4」字幕区做帧差得到的切点（与站上压缩版时间轴一致）；
+     顺序说明：视频以主角巫咸开场，其后依次为卡面 01→15。 */
+  var cardsVideo = document.getElementById("cardsVideo");
+  if (cardsVideo) {
+    var cwBtns = [].slice.call(document.querySelectorAll(".cardwall .cw-btn"));
+    var chBtns = [].slice.call(document.querySelectorAll(".chapter-bar .ch"));
+    var segs = chBtns.map(function (b) {
+      return { t: parseFloat(b.getAttribute("data-t")) || 0, name: b.getAttribute("data-name") };
+    }).sort(function (a, b) { return a.t - b.t; });
+    var curName = null;
+    var pendingT = null;
+
+    var markActive = function (name) {
+      if (name === curName) { return; }
+      curName = name;
+      chBtns.forEach(function (b) {
+        b.classList.toggle("on", b.getAttribute("data-name") === name);
+      });
+      cwBtns.forEach(function (b) {
+        var fig = b.parentNode;
+        if (fig && fig.tagName === "FIGURE") {
+          fig.classList.toggle("playing", b.getAttribute("data-name") === name);
+        }
+      });
+    };
+
+    var applySeek = function (t) {
+      if (isNaN(t)) { return; }
+      if (cardsVideo.readyState >= 1) {
+        try { cardsVideo.currentTime = t; } catch (err) { /* 极少数内核下早于 metadata 时会抛错，忽略 */ }
+      } else {
+        pendingT = t;   /* metadata 还没到，先记下来 */
+      }
+    };
+    cardsVideo.addEventListener("loadedmetadata", function () {
+      if (pendingT !== null) { applySeek(pendingT); pendingT = null; }
+    });
+
+    var jumpTo = function (t, name) {
+      var root = document.documentElement || document.body;
+      var y = window.pageYOffset !== undefined ? window.pageYOffset : (root.scrollTop || 0);
+      var top = cardsVideo.getBoundingClientRect().top + y - 80;
+      try { window.scrollTo({ top: top, behavior: "smooth" }); }
+      catch (err) { root.scrollTop = top; }
+      applySeek(t);
+      try {
+        var p = cardsVideo.play();
+        if (p && p.catch) { p.catch(function () { /* 浏览器拦截自动播放时忽略 */ }); }
+      } catch (err2) { /* 同上 */ }
+      markActive(name);
+    };
+
+    var bind = function (list) {
+      list.forEach(function (b) {
+        b.addEventListener("click", function () {
+          jumpTo(parseFloat(b.getAttribute("data-t")), b.getAttribute("data-name"));
+        });
+      });
+    };
+    bind(cwBtns);
+    bind(chBtns);
+
+    /* 播放过程中同步高亮当前章节（拖进度条也能跟上） */
+    cardsVideo.addEventListener("timeupdate", function () {
+      var t = cardsVideo.currentTime, hit = segs[0];
+      for (var i = 0; i < segs.length; i++) {
+        if (t >= segs[i].t - 0.05) { hit = segs[i]; } else { break; }
+      }
+      if (hit) { markActive(hit.name); }
+    });
+  }
+
   /* ---------- 详情页：当前导航高亮 ---------- */
   var slug = document.body.getAttribute("data-page");
   if (slug && nav) {
