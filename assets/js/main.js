@@ -181,6 +181,57 @@
     });
   }
 
+  /* ---------- 山海纪：卡面属性（五行 / 出现地）----------
+     数据逐段读自卡面动效内信息面板（F:\...\加字粒子.mp4，4K 源）；
+     出现地为空字符串 = 该卡面板上此栏留白。 */
+  var cardMeta = {
+    "巫咸":       { wx: "木", place: "" },
+    "人面鸮":     { wx: "火", place: "" },
+    "昌意":       { wx: "木", place: "朝云国" },
+    "鸾鸟":       { wx: "木", place: "朝云国 · 不死山 · 黑水山 · 先民国 · 摇山" },
+    "女祭·女戚":  { wx: "水", place: "寒荒国" },
+    "青鴍":       { wx: "水", place: "寒荒国 · 玄丹山" },
+    "狌狌":       { wx: "木", place: "大巫山 · 少和渊" },
+    "鳋鱼":       { wx: "金", place: "寒荒国 · 鸟鼠同穴山" },
+    "比翼鸟":     { wx: "水", place: "少和渊 · 大巫山 · 朱卷国" },
+    "双双":       { wx: "金", place: "流黄酆氏国 · 都广野" },
+    "巴蛇":       { wx: "水", place: "巴国" },
+    "延维":       { wx: "木", place: "黑水山" },
+    "鱄鱼":       { wx: "火", place: "巴国 · 鸡山" },
+    "颙鸟":       { wx: "火", place: "巴国 · 令丘山" },
+    "二八":       { wx: "土", place: "羽民国" },
+    "毕方鸟":     { wx: "火", place: "" }
+  };
+  var WX_CLASS = { "木": "wx-mu", "火": "wx-huo", "土": "wx-tu", "金": "wx-jin", "水": "wx-shui" };
+  if (document.querySelector(".cardwall")) {
+    var metaTip = function (m) {
+      return "五行 " + m.wx + (m.place ? " ／ 出现地 " + m.place : "");
+    };
+    var metaHTML = function (m) {
+      return '<span class="cw-meta"><i class="wx ' + (WX_CLASS[m.wx] || "") + '" aria-hidden="true"></i>'
+           + m.wx + (m.place ? " · " + m.place : "") + "</span>";
+    };
+    document.querySelectorAll(".cardwall .cw-btn").forEach(function (b) {
+      var m = cardMeta[b.getAttribute("data-name")];
+      if (!m) { return; }
+      var fig = b.parentNode;
+      var cap = fig && fig.querySelector("figcaption");
+      if (cap && !cap.querySelector(".cw-meta")) { cap.insertAdjacentHTML("beforeend", metaHTML(m)); }
+      b.title = metaTip(m);
+    });
+    document.querySelectorAll(".chapter-bar .ch").forEach(function (b) {
+      var m = cardMeta[b.getAttribute("data-name")];
+      if (!m) { return; }
+      if (!b.querySelector(".wx")) {
+        var dot = document.createElement("i");
+        dot.className = "wx " + (WX_CLASS[m.wx] || "");
+        dot.setAttribute("aria-hidden", "true");
+        b.insertBefore(dot, b.firstChild);
+      }
+      b.title = metaTip(m);
+    });
+  }
+
   /* ---------- 详情页：当前导航高亮 ---------- */
   var slug = document.body.getAttribute("data-page");
   if (slug && nav) {

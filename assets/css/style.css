@@ -412,6 +412,29 @@ footer a:hover { color: var(--gold); }
 .chapter-bar .ch:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
 .hint { font-size: 12.5px; color: var(--gold); letter-spacing: 1px; }
 
+/* 卡面属性（五行 / 出现地，数据取自动效内信息面板） */
+.wx {
+  display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+  margin-right: 5px; vertical-align: 1px; background: var(--gold);
+}
+.wx-mu   { background: #5c7a4a; }   /* 木 · 青 */
+.wx-huo  { background: #9e2b25; }   /* 火 · 赤 */
+.wx-tu   { background: #c39b3f; }   /* 土 · 黄 */
+.wx-jin  { background: #a9a08d; }   /* 金 · 白 */
+.wx-shui { background: #455163; }   /* 水 · 玄 */
+.cardwall .cw-meta {
+  display: block; margin-top: 5px;
+  font-size: 11px; letter-spacing: .5px; color: #9c8d74;
+}
+.chapter-bar .ch .wx { width: 7px; height: 7px; margin-right: 5px; vertical-align: 1px; }
+.chapter-bar .ch.on .wx { box-shadow: 0 0 0 1px rgba(247, 243, 236, .55); }
+.cw-legend {
+  display: flex; flex-wrap: wrap; gap: 6px 15px; justify-content: center;
+  margin-top: 22px; font-size: 11.5px; letter-spacing: 1px; color: #9c8d74;
+}
+.cw-legend .wx { width: 7px; height: 7px; }
+.cw-legend .cw-legend-src { color: #b0a48c; }
+
 /* 2 列 / 3 列整幅拼版（不裁切，卡纸装裱同 .gallery-wide） */
 .gallery-half { grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .gallery-third { grid-template-columns: repeat(3, 1fr); gap: 16px; }
