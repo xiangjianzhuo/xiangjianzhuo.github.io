@@ -444,6 +444,8 @@ footer a:hover { color: var(--gold); }
 .gallery-third .g-item img { height: auto; object-fit: contain; }
 /* 04 节三列：图位统一 16:9 框（图不裁切，比例不足者由卡纸留白补足），保证三列等高、说明文字基线对齐 */
 .gallery-third .g-item img { width: 100%; aspect-ratio: 16 / 9; }
+/* 竖版图位变体（兔军军 04 节三态图）：3:4 框，配统一画布输出的竖图 */
+.gallery-third.portrait .g-item img { aspect-ratio: 3 / 4; }
 .gallery-half .g-item:hover img,
 .gallery-third .g-item:hover img { transform: none; }
 .gallery-half .g-cap,
