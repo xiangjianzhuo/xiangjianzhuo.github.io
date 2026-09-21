@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>近邻 · 社区互助 App 设计 — 项建卓作品集</title>
+<meta name="description" content="近邻 — 社区互助 App 设计：用户调研与需求收敛、功能框架、交互流程、视觉系统到高保真界面的完整过程（闲置流转 / 临时求助 / 邻里信任）。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239e2b25'/%3E%3Ctext x='16' y='23' font-size='19' text-anchor='middle' fill='%23f2ead9'%3E汉%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css?v=20260921">
+</head>
+<body data-page="jinlin">
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">项建卓<small>XIANG JIANZHUO</small></a>
+    <nav class="nav">
+      <a href="index.html" data-slug="home">首页</a>
+      <span class="sep">/</span>
+      <a href="hantang.html" data-slug="hantang">云鬓花颜</a>
+      <span class="sep">/</span>
+      <a href="nuoling.html" data-slug="nuoling">傩灵异想</a>
+      <span class="sep">/</span>
+      <a href="shanhaiji.html" data-slug="shanhaiji">山海纪</a>
+      <span class="sep">/</span>
+      <a href="diling.html" data-slug="diling">帝陵</a>
+      <span class="sep">/</span>
+      <a href="avatar.html" data-slug="avatar">AVATAR</a>
+      <span class="sep">/</span>
+      <a href="jinlin.html" data-slug="jinlin">近邻</a>
+      <span class="sep">/</span>
+      <a href="dancing.html" data-slug="dancing">Dancing Tonight</a>
+      <span class="sep">/</span>
+      <a href="index.html#contact">联系</a>
+    </nav>
+    <button class="menu-btn" aria-label="菜单">菜单 ☰</button>
+  </div>
+</header>
+
+<!-- ===================== 主视觉 ===================== -->
+<div class="dcover">
+  <div class="dimg"><img src="assets/jinlin/cover.jpg" alt="近邻 App 启动页样机"></div>
+  <div class="dhead">
+    <div class="kick">PROJECT 07</div>
+    <h1>近邻</h1>
+    <div class="en3">Community Mutual-Aid App Design</div>
+    <div class="dmeta">
+      <span>社区互助 App · 用户体验设计</span>
+      <span>XD · Photoshop</span>
+      <span>2022</span>
+    </div>
+    <p class="drole">
+      项目角色：用户调研 · 功能框架与交互流程 · 视觉系统 · 高保真界面
+      —— 把小区里闲置的、够不着的、临时缺的东西和服务，交回给邻居。
+    </p>
+  </div>
+</div>
+
+<!-- ===================== 01 定位与调研 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">01</span>
+      <h3>定位与调研</h3>
+      <span class="k-en">Research</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        「近邻」是一个<b>社区互助 App</b>：把小区里闲置的、够不着的、临时缺的东西和服务，交回给邻居。
+        比起跨城的二手平台，它做的是<b>小范围、面对面、抬头不见低头见</b>的交易与求助。
+      </p>
+      <p>
+        设计从行业分析与用户调研开始——问卷加深度访谈，最后收敛出三类核心诉求：
+        <b>闲置流转</b>、<b>临时求助</b>、<b>邻里信任</b>。后面的功能与界面都围绕这三件事展开。
+      </p>
+    </div>
+    <div class="meta-row" data-reveal>
+      <div><b>类型</b>社区互助 App · 用户体验设计</div>
+      <div><b>方法</b>行业分析 · 问卷与深度访谈 · 功能框架 · 交互流程</div>
+      <div><b>交付</b>视觉系统 · 高保真界面 · 样机</div>
+    </div>
+    <div class="gallery gallery-wide" style="margin-top:30px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/jinlin/need.jpg" alt="用户需求分析 问卷与深访结论" loading="lazy">
+        <figcaption class="g-cap">用户需求分析 · 问卷与深访结论</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 02 功能框架与交互 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">02</span>
+      <h3>功能框架与交互流程</h3>
+      <span class="k-en">Structure &amp; Flow</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        把三类诉求翻译成功能：发布、浏览、沟通、成交的闭环要短，求助与回收要能被邻居就近看见。
+        流程图把「发布 → 沟通 → 线下交易」这条主线拆到每一步状态，也是后面画界面的依据。
+      </p>
+    </div>
+    <div class="gallery gallery-wide" style="margin-top:30px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/jinlin/flow.jpg" alt="操作流程图" loading="lazy">
+        <figcaption class="g-cap">操作流程图 · 主流程与分支状态</figcaption>
+      </figure>
+    </div>
+    <div class="gallery gallery-wide" style="margin-top:24px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/jinlin/story.jpg" alt="故事版分镜" loading="lazy">
+        <figcaption class="g-cap">故事版 · 一个「发布后马上有人来拿」的使用场景</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 03 草图与线框 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">03</span>
+      <h3>草图与线框</h3>
+      <span class="k-en">Sketch &amp; Wireframe</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        界面先在纸面上推：每个关键页面画出手绘稿与产品形态的关系，再收敛成带标注的线框板——
+        信息层级、按钮位置与操作路径在这一步定下来，后面才进视觉。
+      </p>
+    </div>
+    <div class="gallery gallery-wide" style="margin-top:30px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/jinlin/frame.jpg" alt="产品形态与交互手绘草图" loading="lazy">
+        <figcaption class="g-cap">产品形态与交互手绘草图</figcaption>
+      </figure>
+    </div>
+    <div class="gallery gallery-wide" style="margin-top:24px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/jinlin/wire.jpg" alt="页面线框板" loading="lazy">
+        <figcaption class="g-cap">页面线框 · 信息层级与操作路径</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04 视觉系统 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">04</span>
+      <h3>视觉系统</h3>
+      <span class="k-en">Visual System</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        标志直接凸显主题文字，「近邻」二字取自<b>「远亲不如近邻，近邻不抵对门」</b>；
+        半包围方框像打开的一扇门，给平面图形赋予透视感。主体色取代表自然环保的绿色，
+        白色文字简洁明了——这抹绿也贯穿到整套界面与样机里。
+      </p>
+    </div>
+    <div class="gallery gallery-wide" style="margin-top:30px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/jinlin/logo-evo.jpg" alt="标志演变过程" loading="lazy">
+        <figcaption class="g-cap">标志演变 · 从手写体到定稿方标</figcaption>
+      </figure>
+    </div>
+    <div class="gallery gallery-half" style="margin-top:24px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/jinlin/logo-final.jpg" alt="近邻 标志定稿" loading="lazy">
+        <figcaption class="g-cap">标志 · 定稿</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/jinlin/mock.jpg" alt="近邻 样机" loading="lazy">
+        <figcaption class="g-cap">样机 · 启动页 / 首页 / 商品详情</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 05 界面设计 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">05</span>
+      <h3>界面设计</h3>
+      <span class="k-en">Interface</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        高保真界面覆盖首页、分类、商品详情、发布、消息与个人中心等核心路径，
+        全部沿用同一套视觉规范；下面是九块核心屏与整套界面的铺底总览。
+      </p>
+    </div>
+    <div class="gallery gallery-wide" style="margin-top:30px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/jinlin/ui.jpg" alt="近邻 核心界面九屏" loading="lazy">
+        <figcaption class="g-cap">核心界面 · 九屏（首页 / 分类 / 商品 / 发布 / 消息 / 我的）</figcaption>
+      </figure>
+    </div>
+    <div class="gallery gallery-wide" style="margin-top:24px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/jinlin/board.jpg" alt="近邻 界面总览" loading="lazy">
+        <figcaption class="g-cap">界面总览 · 全套页面</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 06 项目总结 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">06</span>
+      <h3>项目总结</h3>
+      <span class="k-en">Summary</span>
+    </div>
+    <div class="dsum" data-reveal>
+      <div class="st">TAKEAWAY</div>
+      <p>
+        「近邻」是我第一次把<b>用户调研一路做到高保真界面</b>的项目：三类诉求不是拍脑袋定的，
+        是从问卷与深访里收敛出来的，后面的每一屏都能对应回那三条。
+        这套「先问清楚再画」的习惯后来一直用着——包括毕设里把妆造考据做成知识库的逻辑。
+      </p>
+      <a class="back" href="index.html">返回作品集首页</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 上一项目 / 下一项目 ===================== -->
+<section class="pn">
+  <div class="container">
+    <div class="pn-head">More Projects — 查看更多作品</div>
+    <div class="pn-grid">
+      <a class="pn-card" href="avatar.html">
+        <img src="assets/avatar/cover.jpg" alt="AVATAR" loading="lazy">
+        <div class="pl"><span class="dir">← 上一项目</span><span class="tt">AVATAR</span></div>
+      </a>
+      <a class="pn-card" href="dancing.html">
+        <img src="assets/dancing/card.jpg" alt="Dancing Tonight" loading="lazy">
+        <div class="pl"><span class="dir">下一项目 →</span><span class="tt">Dancing Tonight</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-logo">项建卓 · 作品集</div>
+    <div class="f-line"><a href="index.html">首页</a> · <a href="hantang.html">云鬓花颜</a> · <a href="nuoling.html">傩灵异想</a> · <a href="shanhaiji.html">山海纪</a> · <a href="diling.html">帝陵</a> · <a href="avatar.html">AVATAR</a> · <a href="jinlin.html">近邻</a> · <a href="dancing.html">Dancing Tonight</a> · <a href="tujunjun.html">兔军军</a> · <a href="leyou.html">乐游</a></div>
+    <div class="f-line">© 2026 项建卓</div>
+  </div>
+</footer>
+
+<button class="back-top" aria-label="返回顶部">↑</button>
+<script src="assets/js/main.js?v=20260921"></script>
+</body>
+</html>

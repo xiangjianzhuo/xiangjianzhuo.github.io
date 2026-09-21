@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AVATAR · 生成艺术与灯箱装置 — 项建卓作品集</title>
+<meta name="description" content="AVATAR — 阿凡达主题电影艺术海报设计大赛的生成艺术实验：把电影画面用符号像素、水纹波光与青绿线描三组语言重新生长，并落地为灯箱装置（TouchDesigner / AE / Arduino）。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239e2b25'/%3E%3Ctext x='16' y='23' font-size='19' text-anchor='middle' fill='%23f2ead9'%3E汉%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css?v=20260921">
+</head>
+<body data-page="avatar">
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">项建卓<small>XIANG JIANZHUO</small></a>
+    <nav class="nav">
+      <a href="index.html" data-slug="home">首页</a>
+      <span class="sep">/</span>
+      <a href="hantang.html" data-slug="hantang">云鬓花颜</a>
+      <span class="sep">/</span>
+      <a href="nuoling.html" data-slug="nuoling">傩灵异想</a>
+      <span class="sep">/</span>
+      <a href="shanhaiji.html" data-slug="shanhaiji">山海纪</a>
+      <span class="sep">/</span>
+      <a href="diling.html" data-slug="diling">帝陵</a>
+      <span class="sep">/</span>
+      <a href="avatar.html" data-slug="avatar">AVATAR</a>
+      <span class="sep">/</span>
+      <a href="jinlin.html" data-slug="jinlin">近邻</a>
+      <span class="sep">/</span>
+      <a href="dancing.html" data-slug="dancing">Dancing Tonight</a>
+      <span class="sep">/</span>
+      <a href="index.html#contact">联系</a>
+    </nav>
+    <button class="menu-btn" aria-label="菜单">菜单 ☰</button>
+  </div>
+</header>
+
+<!-- ===================== 主视觉 ===================== -->
+<div class="dcover">
+  <div class="dimg"><img src="assets/avatar/cover.jpg" alt="AVATAR 三组生成艺术：符号像素 / 水纹波光 / 青绿线描"></div>
+  <div class="dhead">
+    <div class="kick">PROJECT 06</div>
+    <h1>AVATAR</h1>
+    <div class="en3">Generative Art &amp; Lightbox Installation</div>
+    <div class="dmeta">
+      <span>阿凡达主题电影艺术海报设计大赛</span>
+      <span>TouchDesigner · AE · Arduino</span>
+      <span>2023 — 2024</span>
+    </div>
+    <p class="drole">
+      项目角色：生成艺术实验 · 画面转译 · 装置落地
+      —— 不重画海报，而是把电影画面交给代码：符号、水波、线条各把同一张画面重新生长一遍。
+    </p>
+  </div>
+</div>
+
+<!-- ===================== 01 定位与概念 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">01</span>
+      <h3>定位与概念</h3>
+      <span class="k-en">Concept</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        「AVATAR」是为<b>阿凡达主题电影艺术海报设计大赛</b>做的一组生成艺术实验。
+        做法不是把画面画一遍，而是把它交给算法——<b>同一张电影画面，用三种不同的介质量新长一遍</b>。
+      </p>
+      <p>
+        <b>故障艺术</b>把画面拆成字符与像素块，<b>水纹波光</b>用水面的褶皱重塑形体的光，
+        <b>青绿线描</b>则把轮廓抽成发光的细线。三组语言既是海报，也是可以动起来的画面；
+        最终落地成街边的<b>灯箱装置</b>，让生成画面回到城市的日常视线里。
+      </p>
+    </div>
+    <div class="meta-row" data-reveal>
+      <div><b>赛事</b>阿凡达主题电影艺术海报设计大赛（西美队 · 交互组）</div>
+      <div><b>工具</b>TouchDesigner · After Effects · Arduino</div>
+      <div><b>形式</b>生成艺术 · 灯箱装置</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 02 故障艺术 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">02</span>
+      <h3>故障艺术 · 符号的像素化重排</h3>
+      <span class="k-en">Glitch &amp; Glyphs</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        第一组把画面拆到最小的单位：每张脸由成千上万个<b>字符与像素块</b>重排而成，
+        远看是肖像，近看是一段文本。密度与配色一换，同一张脸就从冷灰的噪声变成暖调的肤色。
+      </p>
+    </div>
+    <div class="gallery gallery-half" style="margin-top:30px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/avatar/fault-1.jpg" alt="故障艺术 符号重排 单色" loading="lazy">
+        <figcaption class="g-cap">符号重排 · 单色</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/avatar/fault-2.jpg" alt="故障艺术 符号重排 灰阶" loading="lazy">
+        <figcaption class="g-cap">符号重排 · 灰阶</figcaption>
+      </figure>
+    </div>
+    <div class="gallery gallery-half" style="margin-top:20px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/avatar/fault-3.jpg" alt="故障艺术 符号重排 冷灰" loading="lazy">
+        <figcaption class="g-cap">符号重排 · 冷灰</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/avatar/fault-4.jpg" alt="故障艺术 符号重排 暖色" loading="lazy">
+        <figcaption class="g-cap">符号重排 · 暖色</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 03 水纹波光 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">03</span>
+      <h3>水纹波光 · 用水重塑形体的光</h3>
+      <span class="k-en">Water &amp; Light</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        第二组把「水」当成画笔：画面被波纹与折射重新包裹，形体在水的褶皱里时隐时现——
+        线条不再是人描上去的，而是<b>由水面的起伏自然生成</b>。
+      </p>
+    </div>
+    <div class="gallery gallery-half" style="margin-top:30px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/avatar/water-1.jpg" alt="水纹波光 面部在水面浮现" loading="lazy">
+        <figcaption class="g-cap">水纹波光 · 面部轮廓</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/avatar/water-2.jpg" alt="水纹波光 近景" loading="lazy">
+        <figcaption class="g-cap">水纹波光 · 近景</figcaption>
+      </figure>
+    </div>
+    <div class="gallery gallery-half" style="margin-top:20px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/avatar/water-3.jpg" alt="水纹波光 持杖的身影" loading="lazy">
+        <figcaption class="g-cap">水纹波光 · 持杖的身影</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/avatar/water-4.jpg" alt="水纹波光 侧光" loading="lazy">
+        <figcaption class="g-cap">水纹波光 · 侧影</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04 青绿线描 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">04</span>
+      <h3>青绿线描 · 抽出的发光轮廓</h3>
+      <span class="k-en">Cyan Linework</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        第三组只留下最亮的那一层线：结构还在，但画面被抽成发光的轮廓——
+        像把电影画面放进夜视与荧光之间。
+      </p>
+    </div>
+    <div class="gallery gallery-half" style="margin-top:30px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/avatar/line-1.jpg" alt="青绿线描 发光轮廓" loading="lazy">
+        <figcaption class="g-cap">青绿线描 · 发光轮廓</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/avatar/line-2.jpg" alt="青绿线描 目光" loading="lazy">
+        <figcaption class="g-cap">青绿线描 · 目光</figcaption>
+      </figure>
+    </div>
+    <div class="gallery gallery-half" style="margin-top:20px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/avatar/line-3.jpg" alt="青绿线描 持物" loading="lazy">
+        <figcaption class="g-cap">青绿线描 · 持物</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/avatar/line-4.jpg" alt="青绿线描 侧影" loading="lazy">
+        <figcaption class="g-cap">青绿线描 · 侧影</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 05 装置与展陈 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">05</span>
+      <h3>装置与展陈</h3>
+      <span class="k-en">Installation</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        三组实验最终落成<b>灯箱装置</b>，安装在西美校园与街角——
+        生成画面从屏幕走到街道，成为路过的人也会停下来看一眼的那块「广告」。
+      </p>
+    </div>
+    <div class="gallery gallery-half" style="margin-top:30px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/avatar/exhibit-1.jpg" alt="灯箱装置 街角" loading="lazy">
+        <figcaption class="g-cap">灯箱装置 · 街角</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/avatar/exhibit-2.jpg" alt="灯箱装置 近景" loading="lazy">
+        <figcaption class="g-cap">灯箱装置 · 近景</figcaption>
+      </figure>
+    </div>
+    <div class="gallery gallery-wide" style="margin-top:24px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/avatar/poster.jpg" alt="AVATAR 主题海报" loading="lazy">
+        <figcaption class="g-cap">主题海报 · 阿凡达</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 06 项目总结 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">06</span>
+      <h3>项目总结</h3>
+      <span class="k-en">Summary</span>
+    </div>
+    <div class="dsum" data-reveal>
+      <div class="st">TAKEAWAY</div>
+      <p>
+        这组实验让我第一次把「画面」交给算法：同一段电影画面，用符号、水、线三种介质各说一遍，
+        得到的是三种完全不同的情绪。往后「山海纪」的粒子与「云鬓花颜」的风格化生成，
+        用的都是这里想明白的那件事——<b>先决定用什么介质来翻译，再谈效果</b>。
+      </p>
+      <a class="back" href="index.html">返回作品集首页</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 上一项目 / 下一项目 ===================== -->
+<section class="pn">
+  <div class="container">
+    <div class="pn-head">More Projects — 查看更多作品</div>
+    <div class="pn-grid">
+      <a class="pn-card" href="diling.html">
+        <img src="assets/diling/shot-3.jpg" alt="帝陵" loading="lazy">
+        <div class="pl"><span class="dir">← 上一项目</span><span class="tt">帝陵</span></div>
+      </a>
+      <a class="pn-card" href="jinlin.html">
+        <img src="assets/jinlin/cover.jpg" alt="近邻" loading="lazy">
+        <div class="pl"><span class="dir">下一项目 →</span><span class="tt">近邻</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-logo">项建卓 · 作品集</div>
+    <div class="f-line"><a href="index.html">首页</a> · <a href="hantang.html">云鬓花颜</a> · <a href="nuoling.html">傩灵异想</a> · <a href="shanhaiji.html">山海纪</a> · <a href="diling.html">帝陵</a> · <a href="avatar.html">AVATAR</a> · <a href="jinlin.html">近邻</a> · <a href="dancing.html">Dancing Tonight</a> · <a href="tujunjun.html">兔军军</a> · <a href="leyou.html">乐游</a></div>
+    <div class="f-line">© 2026 项建卓</div>
+  </div>
+</footer>
+
+<button class="back-top" aria-label="返回顶部">↑</button>
+<script src="assets/js/main.js?v=20260921"></script>
+</body>
+</html>
