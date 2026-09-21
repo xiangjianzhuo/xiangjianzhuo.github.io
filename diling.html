@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帝陵 · 秦陵逃生解谜游戏 — 项建卓作品集</title>
+<meta name="description" content="帝陵 — 以秦始皇陵修陵工匠逃生为题的 2D 横版解谜游戏（本科课程项目，团队组长）：皮影戏镂刻剪影 × 兵马俑造型，Unity 开发，「物勒工名」考据入题。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239e2b25'/%3E%3Ctext x='16' y='23' font-size='19' text-anchor='middle' fill='%23f2ead9'%3E汉%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css?v=20260920">
+</head>
+<body data-page="diling">
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="index.html">项建卓<small>XIANG JIANZHUO</small></a>
+    <nav class="nav">
+      <a href="index.html" data-slug="home">首页</a>
+      <span class="sep">/</span>
+      <a href="hantang.html" data-slug="hantang">云鬓花颜</a>
+      <span class="sep">/</span>
+      <a href="nuoling.html" data-slug="nuoling">傩灵异想</a>
+      <span class="sep">/</span>
+      <a href="shanhaiji.html" data-slug="shanhaiji">山海纪</a>
+      <span class="sep">/</span>
+      <a href="diling.html" data-slug="diling">帝陵</a>
+      <span class="sep">/</span>
+      <a href="dancing.html" data-slug="dancing">Dancing Tonight</a>
+      <span class="sep">/</span>
+      <a href="index.html#contact">联系</a>
+    </nav>
+    <button class="menu-btn" aria-label="菜单">菜单 ☰</button>
+  </div>
+</header>
+
+<!-- ===================== 主视觉 ===================== -->
+<div class="dcover">
+  <div class="dimg"><img src="assets/diling/cover.jpg" alt="帝陵 工匠打锤剪影"></div>
+  <div class="dhead">
+    <div class="kick">PROJECT 04</div>
+    <h1>帝陵</h1>
+    <div class="en3">Diling · A 2D Side-scrolling Escape Game</div>
+    <div class="dmeta">
+      <span>本科课程项目 · 团队组长</span>
+      <span>Unity 2D 横版解谜</span>
+      <span>2022</span>
+    </div>
+    <p class="drole">
+      项目角色：组长 · 资料收集与考据 · 游戏框架与风格定位 · 统筹分工 · 程序编写 · 场景搭建
+      —— 以秦始皇陵修陵工匠的逃生为题，把皮影戏的镂刻剪影与兵马俑造型嵌进 2D 横版解谜。
+    </p>
+  </div>
+</div>
+
+<!-- ===================== 01 定位与概念 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">01</span>
+      <h3>定位与概念</h3>
+      <span class="k-en">Concept</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        秦始皇陵的修建是史上规模最大的工程之一，而修陵工匠的命运几乎无人讲述。
+        项目选择从工匠的视角进入这段历史：<b>一位技艺高超的匠人</b>参与陵墓营造，竣工在即，
+        二世胡亥却下令把工匠活埋于陵中以守机密——「其中一位工匠见势不妙，钻入了一条水道之中装死逃过一劫」。
+        玩家要做的，就是替他逃出去。
+      </p>
+      <p>
+        形式定为 <b>2D 横版解谜逃生</b>：在逃跑的路上遭遇机关与追兵，逐一破解、避免被活埋的结局。
+        视觉上把<b>皮影戏</b>的镂刻剪影语言与<b>兵马俑</b>的造型熔在一起——平面的剪影天然适合横版，
+        也让整座帝陵像一座会动的皮影戏台。
+      </p>
+      <p class="note">我的角色：组长——前期资料收集与考据、游戏框架与风格定位、统筹分工；并自学 Unity 完成程序编写与场景搭建。</p>
+    </div>
+
+    <div class="duo" data-reveal style="margin-top:6vh">
+      <div class="duo-txt">
+        <div class="dsub">Shadow Puppetry</div>
+        <h4>皮影的可动部件</h4>
+        <ul>
+          <li><b>分片绘制</b>：每个角色按头、臂、腿、身拆成部件单独绘制；</li>
+          <li><b>部件即动画</b>：皮影戏靠关节驱动部件，这一结构直接对应逐帧动画的制作方式；</li>
+          <li><b>镂刻质感</b>：平面色块 + 硬边剪影，保留皮影的刀刻感。</li>
+        </ul>
+        <p class="note">皮影不是贴上去的风格皮，而是角色的制作结构。</p>
+      </div>
+      <figure>
+        <img src="assets/diling/piying-parts.jpg" alt="皮影风格角色部件拆分">
+        <figcaption>主角部件拆分 · 头 / 臂 / 腿 / 身与道具</figcaption>
+      </figure>
+    </div>
+
+    <div class="gallery gallery-wide" style="margin-top:34px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/diling/roles-strip.jpg" alt="主角与兵马俑动作帧" loading="lazy">
+        <figcaption class="g-cap">动作帧 · 主角（静立 / 挥刀）与兵马俑（行走）—— 皮影部件驱动出的逐帧动画</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 02 角色与体块 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">02</span>
+      <h3>角色与体块</h3>
+      <span class="k-en">Character &amp; Blockout</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        三组造型：<b>工匠</b>（主角）、<b>镇墓兽</b>（机关与威胁）、<b>兵马俑</b>（陵中的「守卫」）。
+        先做体块（Blockout）验证比例与体量，确认动态关系后，再落成皮影化的平面剪影——
+        这一步决定了角色在横版画面里的可读性：剪影要一眼可辨，动作要干净。
+      </p>
+    </div>
+    <div class="duo" data-reveal style="margin-top:5vh">
+      <figure>
+        <img src="assets/diling/blocks.jpg" alt="工匠 / 镇墓兽 / 兵马俑 体块与成稿">
+        <figcaption>体块 → 成稿 · 工匠 / 镇墓兽 / 兵马俑</figcaption>
+      </figure>
+      <div class="duo-txt">
+        <div class="dsub">Design Pipeline</div>
+        <h4>从体块到剪影</h4>
+        <ul>
+          <li><b>体块先行</b>：几何体块试比例、试重心，避免后期返工；</li>
+          <li><b>剪影检验</b>：皮影化的关键是轮廓——细节收进色块，靠外形区分角色；</li>
+          <li><b>造型依据</b>：兵马俑的甲胄、发髻与持械姿态取自出土文物造型。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 03 关卡与考据 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">03</span>
+      <h3>关卡与考据</h3>
+      <span class="k-en">Level &amp; Research</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        关卡用<b>瓦片地图</b>逐块搭建：屋脊、柱础、楼梯、斜坡、器物与山影都做成可复用瓦片，
+        拼出陵内地道与地面两个层次。机关与叙事由考据撑起来。
+      </p>
+      <p>
+        最核心的依据是<b>「物勒工名」</b>——战国秦制规定，制作者要在陶俑、陶马等制品上刻划或戳印自己的名字，
+        以便追责质量。考古工作者在兵马俑的隐蔽处发现过成批的刻划、戳印文字：人名与官署、仅人名、仅数字……
+        有了名字，陵墓才不只是「工程」，而是一群人的命运。<br>
+        <span class="hint">这条考据也因此进入关卡叙事：主角的名字，本来就刻在陵墓里。</span>
+      </p>
+    </div>
+    <div class="gallery gallery-half" style="margin-top:30px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/diling/tiles.jpg" alt="瓦片地图素材" loading="lazy">
+        <figcaption class="g-cap">瓦片地图素材 · 屋脊 / 柱 / 楼梯 / 器物 / 山影</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/diling/shot-1.jpg" alt="关卡场景 攀爬与火盆" loading="lazy">
+        <figcaption class="g-cap">关卡实况 · 攀爬与火盆照明（地道路径）</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04 运行演示 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">04</span>
+      <h3>运行演示</h3>
+      <span class="k-en">Gameplay</span>
+    </div>
+    <div class="dbody" data-reveal>
+      <p>
+        故事分镜与运行实况（1 分 38 秒）：开场交代修陵工匠的命运，随后进入操作——
+        攀爬梁柱、躲避追兵、借火盆辨路，一路寻到水道出口。
+      </p>
+    </div>
+    <div class="vdemo vplayer" data-reveal style="margin-top:30px">
+      <video id="dilingVideo" controls preload="metadata" playsinline
+             poster="assets/diling/pv-poster.jpg">
+        <source src="assets/video/diling-pv.mp4" type="video/mp4">
+        你的浏览器不支持内嵌视频播放。
+      </video>
+    </div>
+    <p class="vnote">1 分 38 秒 · 故事分镜与运行实况（静音）</p>
+
+    <div class="gallery gallery-half" style="margin-top:36px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/diling/shot-2.jpg" alt="关卡 马车与长廊" loading="lazy">
+        <figcaption class="g-cap">关卡实况 · 长廊与战马（追兵经过后前行）</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/diling/shot-3.jpg" alt="剧情 秦二世胡亥" loading="lazy">
+        <figcaption class="g-cap">剧情节点 · 秦二世胡亥与守卫（过场演出）</figcaption>
+      </figure>
+    </div>
+    <div class="gallery gallery-half" style="margin-top:20px" data-reveal>
+      <figure class="g-item">
+        <img src="assets/diling/shot-4.jpg" alt="文物注释 战马" loading="lazy">
+        <figcaption class="g-cap">文物注释 · 走近战马触发的考据文案</figcaption>
+      </figure>
+      <figure class="g-item">
+        <img src="assets/diling/pv-poster.jpg" alt="火盆场景" loading="lazy">
+        <figcaption class="g-cap">皮影光影 · 火盆是陵中唯一的光源</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 05 项目总结 ===================== -->
+<section class="dsec">
+  <div class="container">
+    <div class="dsec-head" data-reveal>
+      <span class="k">05</span>
+      <h3>项目总结</h3>
+      <span class="k-en">Summary</span>
+    </div>
+    <div class="dsum" data-reveal>
+      <div class="st">TAKEAWAY</div>
+      <p>
+        这是第一次完整走完「历史考据 → 视觉体系 → 可玩原型」的链路：
+        用皮影的可动部件结构解决 2D 角色动画，用「物勒工名」把出土文物变成关卡叙事，
+        并作为组长带着小组把进度推到可运行。
+        项目让我确认了一件事——<b>传统文化的数字化，不止于把文物做成好看的图，而是替它找到一种可以被「玩」的讲法</b>。
+      </p>
+      <p>后续的毕设「云鬓花颜」与「山海纪」，仍沿用这套「先考据、再转译」的工作方法。</p>
+      <a class="back" href="index.html">返回作品集首页</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 上一项目 / 下一项目 ===================== -->
+<section class="pn">
+  <div class="container">
+    <div class="pn-head">More Projects — 查看更多作品</div>
+    <div class="pn-grid">
+      <a class="pn-card" href="shanhaiji.html">
+        <img src="assets/shanhaiji-card.jpg" alt="山海纪" loading="lazy">
+        <div class="pl"><span class="dir">← 上一项目</span><span class="tt">山海纪</span></div>
+      </a>
+      <a class="pn-card" href="dancing.html">
+        <img src="assets/dancing1.jpg" alt="Dancing Tonight" loading="lazy">
+        <div class="pl"><span class="dir">下一项目 →</span><span class="tt">Dancing Tonight</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-logo">项建卓 · 作品集</div>
+    <div class="f-line"><a href="index.html">首页</a> · <a href="hantang.html">云鬓花颜</a> · <a href="nuoling.html">傩灵异想</a> · <a href="shanhaiji.html">山海纪</a> · <a href="diling.html">帝陵</a> · <a href="dancing.html">Dancing Tonight</a> · <a href="tujunjun.html">兔军军</a> · <a href="leyou.html">乐游</a></div>
+    <div class="f-line">© 2026 项建卓</div>
+  </div>
+</footer>
+
+<button class="back-top" aria-label="返回顶部">↑</button>
+<script src="assets/js/main.js?v=20260920"></script>
+</body>
+</html>
