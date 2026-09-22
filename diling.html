@@ -6,7 +6,7 @@
 <title>帝陵 · 秦陵逃生解谜游戏 — 项建卓作品集</title>
 <meta name="description" content="帝陵 — 以秦始皇陵修陵工匠逃生为题的 2D 横版解谜游戏（本科课程项目）：皮影戏镂刻剪影 × 兵马俑造型，Unity 开发，「物勒工名」考据入题。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239e2b25'/%3E%3Ctext x='16' y='23' font-size='19' text-anchor='middle' fill='%23f2ead9'%3E汉%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/css/style.css?v=20260921">
+<link rel="stylesheet" href="assets/css/style.css?v=20260922">
 </head>
 <body data-page="diling">
 
@@ -38,7 +38,7 @@
 
 <!-- ===================== 主视觉 ===================== -->
 <div class="dcover">
-  <div class="dimg"><img src="assets/diling/cover.jpg" alt="帝陵 工匠打锤剪影"></div>
+  <div class="dimg"><img src="assets/diling/cover.jpg?v=20260922" alt="帝陵 标题卡：修陵工匠群像"></div>
   <div class="dhead">
     <div class="kick">PROJECT 04</div>
     <h1>帝陵</h1>
@@ -97,9 +97,36 @@
 
     <div class="gallery gallery-wide" style="margin-top:34px" data-reveal>
       <figure class="g-item">
-        <img src="assets/diling/roles-strip.jpg?v=20260921" alt="主角与兵马俑动作帧" loading="lazy">
-        <figcaption class="g-cap">动作帧 · 主角（静立 / 挥刀）与兵马俑（行走）—— 皮影部件驱动出的逐帧动画</figcaption>
+        <img src="assets/diling/actions.jpg?v=20260922" alt="动作帧表：主角 静立 / 行走 / 跳跃 / 爬行 / 挥刀，兵马俑 行走" loading="lazy">
+        <figcaption class="g-cap">动作帧表 · 主角（静立 / 行走 / 跳跃 / 爬行 / 挥刀）与兵马俑（行走）—— 皮影部件驱动出的逐帧动画；全表同一比例、按脚底基线对齐</figcaption>
       </figure>
+    </div>
+
+    <div class="dbody" data-reveal style="margin-top:30px">
+      <p>
+        动作帧按皮影的关节驱动方式逐帧绘制，再在 Unity 里完成<b>骨骼绑定与关键帧</b>。
+        下面两段静音循环——左为动画窗口里的骨骼与关键帧，右为场景中的实际运行效果。
+      </p>
+    </div>
+    <div class="vloop" data-reveal>
+      <div>
+        <div class="vdemo vplayer">
+          <video id="dilingRig" autoplay muted loop playsinline preload="metadata">
+            <source src="assets/video/diling-rig.mp4" type="video/mp4">
+            你的浏览器不支持内嵌视频播放。
+          </video>
+        </div>
+        <p class="vnote">骨骼绑定 · Unity 动画窗口（骨骼、关键帧与曲线）</p>
+      </div>
+      <div>
+        <div class="vdemo vplayer">
+          <video id="dilingRun" autoplay muted loop playsinline preload="metadata">
+            <source src="assets/video/diling-gameplay.mp4" type="video/mp4">
+            你的浏览器不支持内嵌视频播放。
+          </video>
+        </div>
+        <p class="vnote">运行实况 · 场景一（行走与攀爬，14 秒循环）</p>
+      </div>
     </div>
   </div>
 </section>
@@ -262,6 +289,6 @@
 </footer>
 
 <button class="back-top" aria-label="返回顶部">↑</button>
-<script src="assets/js/main.js?v=20260921"></script>
+<script src="assets/js/main.js?v=20260922"></script>
 </body>
 </html>
